@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seoul 2-Day Family Itinerary</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f5f2;
+    color: #1a1a18;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+  }
+  .page-title { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .page-sub { font-size: 14px; color: #5f5e5a; margin-bottom: 24px; }
+  .it-wrap { max-width: 720px; margin: 0 auto; }
+  .day-tab-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .day-tab { padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1.5px solid #b4b2a9; color: #5f5e5a; background: transparent; transition: all .15s; }
+  .day-tab.active { background: #1a1a18; color: #f5f5f2; border-color: #1a1a18; }
+  .day-panel { display: none; }
+  .day-panel.active { display: block; }
+  .day-header { font-size: 17px; font-weight: 500; color: #1a1a18; margin-bottom: 3px; }
+  .day-sub { font-size: 13px; color: #5f5e5a; margin-bottom: 18px; }
+  .block { display: flex; gap: 14px; }
+  .timeline { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .line { width: 2px; flex: 1; min-height: 20px; background: #d3d1c7; margin: 3px 0; }
+  .card { background: #fff; border: 1px solid #e0dfd8; border-radius: 12px; padding: 13px 15px; flex: 1; margin-bottom: 11px; }
+  .card-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .card-time { font-size: 12px; color: #888780; white-space: nowrap; margin-top: 2px; }
+  .card-title { font-size: 14px; font-weight: 500; color: #1a1a18; margin-bottom: 4px; }
+  .card-desc { font-size: 13px; color: #5f5e5a; line-height: 1.5; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-right: 4px; margin-top: 6px; }
+  .t-food { background: #FAEEDA; color: #854F0B; }
+  .t-kids { background: #E1F5EE; color: #0F6E56; }
+  .t-shop { background: #EEEDFE; color: #3C3489; }
+  .t-culture { background: #FAECE7; color: #993C1D; }
+  .t-rest { background: #F1EFE8; color: #5F5E5A; }
+  .tip { font-size: 12px; color: #888780; margin-top: 6px; border-left: 2px solid #d3d1c7; padding-left: 8px; line-height: 1.5; }
+  .legend { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .skip-note { font-size: 12px; color: #5f5e5a; background: #f1efe8; border: 1px solid #d3d1c7; border-radius: 8px; padding: 8px 12px; margin-bottom: 18px; line-height: 1.5; }
+  .area-chip { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 20px; margin-left: 6px; vertical-align: middle; background: #f5f5f2; border: 1px solid #d3d1c7; color: #5f5e5a; }
+  .print-note { font-size: 12px; color: #888780; text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0dfd8; }
+</style>
+</head>
+<body>
+<div class="it-wrap">
+  <div class="page-title">Seoul Family Trip — 2-Day Itinerary</div>
+  <p class="page-sub">Multigenerational group · 6 kids (ages 5–11) · Grandma-friendly pace · Myeongdong base</p>
+
+  <div class="day-tab-row">
+    <button class="day-tab active" onclick="showDay(0)">Day 1 — Heritage &amp; Myeongdong</button>
+    <button class="day-tab" onclick="showDay(1)">Day 2 — Hongdae, Markets &amp; Gangnam</button>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-panel active" id="panel-0">
+    <div class="day-header">Day 1 — Palace, Culture &amp; Myeongdong</div>
+    <div class="day-sub">Gyeongbokgung · Bukchon Hanok Village · Gwangjang Market · Myeongdong · Olive Young · Namsan Tower</div>
+    <div class="legend">
+      <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span>
+    </div>
+    <div class="skip-note">
+      ⚠️ <strong>Bukchon note:</strong> The village is scenic but hilly with uneven cobblestones — manageable for grandma if you stick to the lower viewing spots and don't attempt the steep upper alleys. Keep it short (30–40 min) and have a taxi ready.
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast near hotel</div><div class="card-time">8:30 AM</div></div>
+        <div class="card-desc">Start relaxed — juk (rice porridge) or a hotel buffet. GS25 or CU convenience stores are a quick fallback for kimbap, onigiri, and banana milk for the kids.</div>
+        <span class="tag t-food">Food</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Gyeongbokgung Palace + Hanbok rental<span class="area-chip">Gyeongbokgung</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">Take Line 3 subway or taxi. Rent hanbok nearby — kids in hanbok enter free. Stroll the main courtyards at grandma's pace. Catch the Changing of the Guard at 10:00 AM — kids love it. Skip the steep inner paths.</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Accessible pathways throughout. Hanbok makes for great family photos against the palace backdrop.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Bukchon Hanok Village — lower viewing spots only<span class="area-chip">Bukchon</span></div><div class="card-time">11:15 AM</div></div>
+        <div class="card-desc">Short taxi from the palace. Head to Bukchon-ro 11-gil for the iconic rooftop view — accessible and flat enough for grandma. The photogenic alley vista is worth the stop. Skip the steep upper lanes entirely. 30–40 min max, then taxi out.</div>
+        <span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Arrive before noon — it gets crowded by midday. Quiet = better photos with kids in hanbok if still wearing them.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Gwangjang Market — lunch<span class="area-chip">Jongno</span></div><div class="card-time">12:15 PM</div></div>
+        <div class="card-desc">Taxi to Gwangjang Market — one of Seoul's oldest covered food markets. Bindaetteok (mung bean pancakes), mayak gimbap, and japchae are must-tries and very kid-friendly. Grandma can sit at a stall while adults take turns exploring. The covered arcade means no weather worries.</div>
+        <span class="tag t-food">Food</span><span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Stalls have stools — grab seats and let the ajummas serve you. Point and order; no Korean needed.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Myeongdong Kyoja — snack stop<span class="area-chip">Myeongdong</span></div><div class="card-time">2:00 PM</div></div>
+        <div class="card-desc">Taxi back to Myeongdong. Pop into the legendary Myeongdong Kyoja for kalguksu (knife-cut noodles) or mandu (dumplings) as a light post-market snack. Portions are great value and kids reliably love the dumplings. Queue moves fast.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: One of Seoul's most famous noodle institutions. Go early to beat the afternoon queue.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Olive Young Flagship + Myeongdong street stalls<span class="area-chip">Myeongdong</span></div><div class="card-time">3:00 PM</div></div>
+        <div class="card-desc">The main event. Myeongdong's Olive Young flagship spans multiple floors — skincare, haircare, K-beauty, and snacks. Adults shop in shifts while one person watches the kids. Then hit the street stalls: tornado potato, egg bread, and tteokbokki for the kids. Keep receipts for tourist tax refund.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Also check Lotte Department Store (short walk) for higher-end beauty and a food hall basement where grandma can rest over tea.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Café rest break</div><div class="card-time">4:45 PM</div></div>
+        <div class="card-desc">Everyone recharges. Find a spacious café — bingsu or hotteok for the kids, coffee for the adults. Reorganise shopping bags and check that grandma's doing well before the evening leg.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Namsan Tower — cable car at dusk<span class="area-chip">Namsan</span></div><div class="card-time">5:30 PM</div></div>
+        <div class="card-desc">The cable car up is scenic and effortless — grandma-friendly. Kids love the love-lock fence and the panoramic city view as the lights come on. Skip the observatory if energy is low; the free outdoor deck and cable car ride alone are worth it.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Time your cable car ride for just before dusk for a spectacular sunset over the city.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner — Samgyeopsal or Jjigae<span class="area-chip">Myeongdong</span></div><div class="card-time">7:15 PM</div></div>
+        <div class="card-desc">Grilled pork belly is festive and interactive — kids love cooking at the table. If grandma prefers something quieter, sundubu jjigae (soft tofu stew) is a warm, comforting alternative. Many Myeongdong restaurants have English menus.</div>
+        <span class="tag t-food">Food</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Night market wind-down</div><div class="card-time">8:30 PM</div></div>
+        <div class="card-desc">One last loop through Myeongdong's evening stalls — strawberry mochi, fishcake skewers, or hotteok before the walk back to the hotel. Gentle end to Day 1.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-panel" id="panel-1">
+    <div class="day-header">Day 2 — Hongdae, Markets &amp; Gangnam</div>
+    <div class="day-sub">Hongdae · Hello Kitty Café · Noryangjin Fish Market · COEX Mall &amp; Aquarium · BBQ Chicken dinner</div>
+    <div class="legend">
+      <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span>
+    </div>
+    <div class="skip-note">
+      ⚠️ <strong>Noryangjin note:</strong> The fish market is lively and adventurous, but involves stairs and wet floors — not ideal for grandma. Consider having one adult take the older kids as a quick detour while grandma and younger ones rest at a nearby café, then regroup for COEX.
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast — hotel or nearby café</div><div class="card-time">8:30 AM</div></div>
+        <div class="card-desc">Fuel up before the Hongdae morning. A hotel buffet or a nearby Paris Baguette (Korean bakery chain, very family-friendly) works well. Get an early start — Hongdae is best explored before the afternoon crowds.</div>
+        <span class="tag t-food">Food</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Hongdae Shopping Street<span class="area-chip">Hongdae</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">Take a taxi from Myeongdong (~20 min). Hongdae is Seoul's youth culture hub — indie fashion, K-pop merch, character goods, and street art. The main shopping streets are flat and walkable. Kids will love the quirky character shops and street performers (especially on weekends). Good Olive Young branches here too.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Aha! and Kakao Friends Store are great for affordable character goods. Grandma can rest at a street café while the group explores.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Hello Kitty / character café<span class="area-chip">Hongdae</span></div><div class="card-time">11:00 AM</div></div>
+        <div class="card-desc">Hongdae is home to several themed cafés including Hello Kitty–themed spots. Kids aged 5–11 are in the sweet spot for these — themed drinks, desserts, and photo ops. Grandma gets a proper sit-down rest with a drink while the kids have a moment they'll talk about for months.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Search "Hello Kitty café Hongdae" closer to your trip date to confirm current location — themed cafés occasionally relocate.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Noryangjin Fish Market — adventurous lunch<span class="area-chip">Noryangjin</span></div><div class="card-time">12:30 PM</div></div>
+        <div class="card-desc">Taxi or Line 1 subway (~15 min from Hongdae). Pick live seafood from the market stalls downstairs, then take it upstairs to a restaurant to have it cooked. Sashimi, grilled fish, and haemul tang (seafood stew) are highlights. Wet floors and stairs make this tricky for grandma — split the group here if needed.</div>
+        <span class="tag t-food">Food</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Point at what you want in the tanks — no Korean needed. Prices are per 100g, so confirm before buying. Very fresh, very fun for adventurous kids.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Transit to Gangnam — rest en route</div><div class="card-time">2:00 PM</div></div>
+        <div class="card-desc">Taxi to COEX Mall in Gangnam (~25 min). Use the ride as a rest window — grandma and the younger kids can doze or decompress before the COEX leg.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">COEX Mall + SEA LIFE Aquarium<span class="area-chip">Gangnam</span></div><div class="card-time">2:30 PM</div></div>
+        <div class="card-desc">COEX is a massive underground mall — fully air-conditioned, flat, and very grandma-friendly. The SEA LIFE Coex Aquarium is a highlight for the kids: sharks, rays, and touch pools. After the aquarium, explore the Starfield Library (stunning bookshelf installation) and browse the character/toy shops.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Pre-book aquarium tickets online to skip queues. The Starfield Library is free and one of Seoul's most Instagrammable spots.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">COEX café break</div><div class="card-time">4:45 PM</div></div>
+        <div class="card-desc">COEX has dozens of cafés — find a spacious one and let grandma rest while the kids finish any last browsing. Good moment for adults to consolidate bags and regroup before dinner.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner — BBQ Chicken<span class="area-chip">Gangnam</span></div><div class="card-time">6:30 PM</div></div>
+        <div class="card-desc">BBQ Chicken (비비큐 치킨) is a beloved Korean fried chicken chain — crispy, saucy, and universally loved by kids and adults. Find a branch near COEX for the classic Korean chimaek experience (chicken + beer for adults, soda for kids). Honey garlic and soy garlic flavours are crowd-pleasers.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Order a mix of flavours — half crispy original, half soy garlic is a reliable combination for a mixed group.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Café Cinnamon + last dessert run</div><div class="card-time">8:00 PM</div></div>
+        <div class="card-desc">End with a visit to Café Cinnamon if open and nearby — a cosy, whimsical café that fits the trip's character café theme. Otherwise, grab dessert from a patbingsu or hotteok stall before the taxi back to Myeongdong. Sweet end to two full days.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm Café Cinnamon's current location before visiting — search closer to your travel date as smaller cafés in Seoul sometimes move or change hours.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-note">Seoul Family Itinerary · Generated with Claude · Verify hours and locations before travel</div>
+</div>
+
+<script>
+function showDay(i) {
+  document.querySelectorAll('.day-tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.day-panel').forEach((p,j) => p.classList.toggle('active', i===j));
+}
+</script>
+</body>
+</html>
