@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seoul &amp; Jeju Family Itinerary</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f2; color: #1a1a18; padding: 2rem 1rem; line-height: 1.6; }
+.page-title { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.page-sub { font-size: 14px; color: #5f5e5a; margin-bottom: 24px; }
+.it-wrap { max-width: 720px; margin: 0 auto; }
+.day-tab-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.day-tab { padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1.5px solid #b4b2a9; color: #5f5e5a; background: transparent; transition: all .15s; }
+.day-tab.active { background: #1a1a18; color: #f5f5f2; border-color: #1a1a18; }
+.day-panel { display: none; }
+.day-panel.active { display: block; }
+.day-header { font-size: 17px; font-weight: 500; color: #1a1a18; margin-bottom: 3px; }
+.day-sub-line { font-size: 13px; color: #5f5e5a; margin-bottom: 18px; }
+.block { display: flex; gap: 14px; }
+.timeline { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.line { width: 2px; flex: 1; min-height: 20px; background: #d3d1c7; margin: 3px 0; }
+.card { background: #fff; border: 1px solid #e0dfd8; border-radius: 12px; padding: 13px 15px; flex: 1; margin-bottom: 11px; }
+.card-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-time { font-size: 12px; color: #888780; white-space: nowrap; margin-top: 2px; }
+.card-title { font-size: 14px; font-weight: 500; color: #1a1a18; margin-bottom: 4px; }
+.card-desc { font-size: 13px; color: #5f5e5a; line-height: 1.5; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-right: 4px; margin-top: 6px; }
+.t-food { background: #FAEEDA; color: #854F0B; }
+.t-kids { background: #E1F5EE; color: #0F6E56; }
+.t-shop { background: #EEEDFE; color: #3C3489; }
+.t-culture { background: #FAECE7; color: #993C1D; }
+.t-rest { background: #F1EFE8; color: #5F5E5A; }
+.t-allergy { background: #FCEBEB; color: #A32D2D; }
+.tip { font-size: 12px; color: #888780; margin-top: 6px; border-left: 2px solid #d3d1c7; padding-left: 8px; line-height: 1.5; }
+.allergy-note { font-size: 12px; color: #791F1F; background: #FCEBEB; border: 1.5px solid #F09595; border-radius: 6px; padding: 6px 10px; margin-top: 7px; line-height: 1.5; }
+.legend { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.note { font-size: 12px; color: #5f5e5a; background: #f1efe8; border: 1px solid #d3d1c7; border-radius: 8px; padding: 8px 12px; margin-bottom: 12px; line-height: 1.5; }
+.note.allergy { background: #FCEBEB; border-color: #F09595; color: #791F1F; }
+.area-chip { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 20px; margin-left: 6px; vertical-align: middle; background: #f5f5f2; border: 1px solid #d3d1c7; color: #5f5e5a; }
+.print-note { font-size: 12px; color: #888780; text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0dfd8; }
+</style>
+</head>
+<body>
+<div class="it-wrap">
+  <div class="page-title">Seoul &amp; Jeju Family Trip &mdash; 8-Day Itinerary</div>
+  <p class="page-sub">Multigenerational group &middot; 6 kids (ages 5&ndash;11) &middot; Grandma-friendly pace &middot; Myeongdong &amp; Jeju City base &middot; Sotetsu Hotels The Splaisir &middot; Shilla Stay Jeju Airport</p>
+
+  <div class="day-tab-row">
+    <button class="day-tab active" onclick="showDay(0)">30 May &mdash; Seoul Arrival</button>
+    <button class="day-tab" onclick="showDay(1)">31 May &mdash; Seoul Heritage &amp; Myeongdong</button>
+    <button class="day-tab" onclick="showDay(2)">1 Jun &mdash; Seoul Hongdae &amp; Gangnam</button>
+    <button class="day-tab" onclick="showDay(3)">2 Jun &mdash; Jeju Arrival</button>
+    <button class="day-tab" onclick="showDay(4)">3 Jun &mdash; Jeju West Coast</button>
+    <button class="day-tab" onclick="showDay(5)">4 Jun &mdash; Jeju South Coast</button>
+    <button class="day-tab" onclick="showDay(6)">5 Jun &mdash; DeleKoomDa &amp; Jeju City</button>
+    <button class="day-tab" onclick="showDay(7)">6 Jun &mdash; Departure</button>
+  </div>
+
+  <!-- ==================== PANEL 0: 30 MAY ==================== -->
+  <div class="day-panel active" id="panel-0">
+    <div class="day-header">30 May 2026 &mdash; departure &amp; arrival day</div>
+    <div class="day-sub-line">Bedok &rarr; Changi T2 &middot; SQ600 &middot; ICN &middot; Hyundai Solati &middot; Check-in Sotetsu Hotels The Splaisir Seoul Myeongdong</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Kendrick's family leaves Bedok 6:00 AM SGT &middot; Kelvin's family (incl. Grandma) leaves Bukit Timah ~5:50 AM SGT &middot; Both families meet Changi T2 by 6:30 AM &middot; SQ600 departs 8:10 AM SGT &middot; Arrives ICN 3:30 PM KST &middot; Clear immigration by 4:15 PM KST &middot; Hotel ~5:15&ndash;5:30 PM KST &middot; Dinner Hadongkwan 7:00 PM &middot; Myeongdong street food stroll 8:30 PM &middot; Back to hotel ~10:00 PM</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy &mdash; applies every day of this trip:</strong> One child has a severe peanut allergy (anaphylaxis). Always carry the EpiPen. Before every meal, show the Korean allergy card to staff: <em>&#54253;&#47084;&#54253;&#47084; &#50500;&#45208;&#54596;&#46972;&#49884;&#49828;</em> / &ldquo;I have a life-threatening peanut allergy &mdash; I cannot eat anything containing peanuts.&rdquo; When in doubt about any item, skip it entirely.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; depart home, two Comfort/Grab taxis<span class="area-chip">Bedok</span></div><div class="card-time">6:00 AM SGT</div></div>
+        <div class="card-desc">Book two Comfort taxis or Grab rides in advance for 6:00 AM. Split the group across both vehicles to accommodate everyone and the luggage. Pre-book the night before via the Comfort or Grab app. Drive to Changi from Bedok is approximately 20&ndash;25 min, arriving at Terminal 2 by 6:25&ndash;6:30 AM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Assign one adult per taxi to manage luggage and kids. Book via app the evening before &mdash; availability can be tight for simultaneous bookings at 6 AM.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family (incl. Grandma) &mdash; depart home, two Comfort/Grab taxis<span class="area-chip">Bukit Timah</span></div><div class="card-time">~5:50 AM SGT</div></div>
+        <div class="card-desc">Book two Comfort taxis or Grab rides in advance for approximately 5:50 AM. Bukit Timah to Changi T2 is approximately 35&ndash;40 min, arriving at Terminal 2 by 6:25&ndash;6:30 AM to meet Kendrick's family. Pre-book the night before via the Comfort or Grab app. Ensure Grandma boards comfortably and confirm luggage space across both vehicles.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Bukit Timah is slightly further from Changi than Bedok &mdash; allow an extra 10&ndash;15 min and depart a little earlier to arrive at T2 at the same time. Book via app the evening before.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Both families meet &amp; check-in &mdash; Singapore Airlines, Changi T2<span class="area-chip">Changi T2</span></div><div class="card-time">6:30 AM SGT</div></div>
+        <div class="card-desc">Both families meet at Changi Terminal 2 by 6:30 AM. SQ600 departs from Terminal 2 &mdash; check-in counters open 2.5&ndash;3 hours before departure, giving a comfortable 100-minute buffer before the 8:10 AM departure. Use SQ online check-in beforehand. Drop bags together, clear immigration, and head to the gate as a group.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Agree on a specific meeting point at T2 in advance &mdash; the SQ check-in counters or the departure hall entrance works well. Changi T2 has a food court and cafes airside &mdash; grab breakfast for the group after clearing immigration.</div>
+        <div class="allergy-note">Allergy: Airside food stalls carry items with peanuts. Choose clearly labelled items; avoid mixed nut snacks and unlabelled baked goods. Safe options: plain rice dishes, noodles without peanut sauce, kaya toast (not peanut butter). Confirm with staff before ordering for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Board &amp; depart &mdash; SQ600<span class="area-chip">Changi T2</span></div><div class="card-time">8:10 AM SGT</div></div>
+        <div class="card-desc">Singapore Airlines SQ600 departs Changi Terminal 2 at 8:10 AM. Flight time approximately 6 hours 20 minutes. Arrives Incheon at 3:30 PM KST. KST is 1 hour ahead of SGT.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Stock up on entertainment and snacks for the kids before boarding. SQ meals are served but a 6h35m flight with young kids benefits from extra downloaded shows.</div>
+        <div class="allergy-note">Allergy: Inform SQ cabin crew of the severe peanut allergy immediately on boarding. Request that no peanut snacks are served near your seats. Bring safe pre-packed snacks from home as backup. SQ is generally allergen-aware but always confirm with crew.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Arrive Incheon (ICN) &mdash; immigration &amp; baggage<span class="area-chip">ICN Terminal 1</span></div><div class="card-time">3:30 PM KST</div></div>
+        <div class="card-desc">ICN is large but very well-organised. Follow signs to immigration &mdash; family lanes are available, use them. Singapore passport holders clear on e-gates. Baggage claim and customs typically add 30&ndash;45 min. Target full airside clearance by 4:15 PM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Pick up a T-Money card and a local SIM or pocket Wi-Fi at the airport before exiting &mdash; both available at convenience stores and kiosks in the arrivals hall.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kook driver pickup &mdash; Hyundai Solati<span class="area-chip">ICN arrivals</span></div><div class="card-time">4:15 PM KST</div></div>
+        <div class="card-desc">Your pre-arranged Kook driver will be waiting in the arrivals hall with a Hyundai Solati. Confirm the pickup point with Kook in advance. The Solati seats up to 11 and has good luggage capacity &mdash; the whole group travels together. Drive to Myeongdong is approximately 60 min, potentially longer during peak hour.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Save the driver's contact number offline before departure. Use the drive time to rest &mdash; everyone will be tired.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Check-in &mdash; Sotetsu Hotels The Splaisir Seoul Myeongdong<span class="area-chip">Myeongdong</span></div><div class="card-time">~5:15&ndash;5:30 PM KST</div></div>
+        <div class="card-desc">The Splaisir is a 4-star property with 428 rooms, a fitness centre, on-site Korean buffet and Italian restaurant, and a convenience store outside the main entrance. Check-in is from 3:00 PM so rooms will be ready. Located at 15 Namdaemun-ro 5-gil &mdash; short walk from Namdaemun Market and 10&ndash;15 min from Myeongdong's main food and shopping streets.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: The hotel breakfast buffet runs 7:00&ndash;10:00 AM daily. Worth pre-booking for the group. The airport limousine bus stop is a 1-min walk from the hotel &mdash; useful to note for departure day.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Hadongkwan<span class="area-chip">Myeongdong</span></div><div class="card-time">7:00 PM KST</div></div>
+        <div class="card-desc">Hadongkwan is one of Seoul's most storied restaurants, established in 1939 and a Myeongdong institution. Famous for a single dish done exceptionally well: gomtang (곰탕), a slow-simmered beef bone broth served with rice, kimchi, and sliced beef. The broth is clean, rich, and deeply restorative &mdash; ideal for jet-lagged stomachs after a long travel day. Simple, unfussy, and universally loved by kids and adults alike. The restaurant is a short walk from the Splaisir.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Hadongkwan is popular &mdash; arrive early or expect a brief queue. The menu is straightforward: gomtang with rice is the move for everyone. Order extra rice for the kids. Cash is preferred.</div>
+        <div class="allergy-note">Allergy: Gomtang is beef bone broth with sliced beef &mdash; no peanut ingredients. The kimchi and banchan sides are standard and generally peanut-free. Confirm with staff before ordering if uncertain about any side dish. This is one of the safer dinner options of the trip for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Myeongdong street food stroll<span class="area-chip">Myeongdong</span></div><div class="card-time">8:30 PM KST</div></div>
+        <div class="card-desc">After dinner, take a short walk into the Myeongdong street food area for a browse and light snacking. Don't go hungry &mdash; this is for sampling and atmosphere after the main meal. Reference list for what to look out for:<br><br>
+        <strong>Snacks &amp; street classics</strong><br>
+        &bull; Fish cake skewers / Odeng / Eomuk (어묵)<br>
+        &bull; Egg bread / Gyeran-ppang (계란빵)<br>
+        &bull; Sweet filled pancakes / Hotteok (호떡)<br>
+        &bull; Spicy rice cakes / Tteokbokki (떡볶이)<br>
+        &bull; Tornado Potato (회오리 감자)<br>
+        &bull; Korean Corn Dogs (감자핫도그)<br><br>
+        <strong>Seafood &amp; grilled</strong><br>
+        &bull; Grilled Scallops (구이 가리비)<br>
+        &bull; Deep Fried Giant Squid / Ojingeo Twigim (오징어 튀김)<br>
+        &bull; Grilled / Dried Cuttlefish (건오징어)<br>
+        &bull; Grilled meat, squid or seafood on a stick / Kkochi<br><br>
+        <strong>&#10060; Skip these:</strong><br>
+        &bull; Grilled lobster with cheese &mdash; overpriced tourist-trap stalls; quality does not justify the cost<br>
+        &bull; Wagyu steak skewers &mdash; rarely genuine Wagyu at street prices; skip in favour of the real thing at a proper restaurant</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: The kids will love the tornado potato and corn dogs. Grilled scallops are a crowd favourite and great value. Don't over-eat &mdash; tomorrow is a full day and an early start is ideal. Head back to the hotel by 9:30&ndash;10:00 PM.</div>
+        <div class="allergy-note">Allergy: Most of these items are peanut-free but cross-contamination at busy stalls is a risk. Show the allergy card at each stall before buying for the child. Hotteok can occasionally contain peanut filling variants &mdash; confirm it is the cinnamon-sugar version before the child eats. Tteokbokki, odeng, scallops, and squid are generally safe &mdash; verify each stall individually.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Early night &mdash; prep for Day 1</div><div class="card-time">~10:00 PM KST</div></div>
+        <div class="card-desc">Get the kids to bed at a reasonable hour. No significant jet lag from Singapore &mdash; KST is only 1 hour ahead of SGT. Set alarms for a 7:00 AM start on Day 1 to make the most of the palace visit before crowds build.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 1: 31 MAY ==================== -->
+  <div class="day-panel" id="panel-1">
+    <div class="day-header">31 May 2026 &mdash; Seoul heritage &amp; Myeongdong</div>
+    <div class="day-sub-line">Gyeongbokgung &middot; Bukchon Hanok Village &middot; Gwangjang Market &middot; Myeongdong &middot; Olive Young &middot; Namsan Tower &middot; Wangbijib dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Breakfast 8:30 AM &middot; Gyeongbokgung Palace + Hanbok 9:30 AM &middot; Bukchon Hanok Village 11:15 AM &middot; Gwangjang Market lunch 12:15 PM &middot; Myeongdong Kyoja snack 2:00 PM &middot; Olive Young + street stalls 3:00 PM &middot; Cafe rest 4:45 PM &middot; Namsan Tower cable car 5:30 PM &middot; Wangbijib dinner 7:15 PM &middot; Night market 8:30 PM</div>
+    <div class="note">&#9888;&#65039; <strong>Bukchon note:</strong> The village is scenic but hilly with uneven cobblestones &mdash; manageable for grandma if you stick to the lower viewing spots and don't attempt the steep upper alleys. Keep it short (30&ndash;40 min) and have a taxi ready.</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> Show the Korean allergy card at every restaurant and food stall before ordering. At Gwangjang Market, stalls are closely packed with cross-contamination risk &mdash; stick to items with clearly visible ingredients. Peanut candy and peanut-coated snacks are common in Korean markets; avoid these entirely.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast near hotel</div><div class="card-time">8:30 AM</div></div>
+        <div class="card-desc">Start relaxed &mdash; juk (rice porridge) or a hotel buffet. GS25 or CU convenience stores are a quick fallback for kimbap, onigiri, and banana milk for the kids.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: At the hotel buffet avoid unlabelled sauces, mixed nut trays, and peanut spreads. Juk (plain rice porridge) is a naturally safe choice. At convenience stores, check ingredient labels before purchasing any packaged item for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Gyeongbokgung Palace + Hanbok rental<span class="area-chip">Gyeongbokgung</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">Take Line 3 subway or taxi. Rent hanbok nearby &mdash; kids in hanbok enter free. Stroll the main courtyards at grandma's pace. Catch the Changing of the Guard at 10:00 AM. Skip the steep inner paths.</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Accessible pathways throughout. Hanbok makes for great family photos against the palace backdrop.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Bukchon Hanok Village &mdash; lower viewing spots only<span class="area-chip">Bukchon</span></div><div class="card-time">11:15 AM</div></div>
+        <div class="card-desc">Short taxi from the palace. Head to Bukchon-ro 11-gil for the iconic rooftop view &mdash; accessible and flat enough for grandma. The photogenic alley vista is worth the stop. Skip the steep upper lanes entirely. 30&ndash;40 min max, then taxi out.</div>
+        <span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Arrive before noon &mdash; it gets crowded by midday. Quiet = better photos with kids in hanbok if still wearing them.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Gwangjang Market &mdash; lunch<span class="area-chip">Jongno</span></div><div class="card-time">12:15 PM</div></div>
+        <div class="card-desc">Taxi to Gwangjang Market &mdash; one of Seoul's oldest covered food markets. Bindaetteok (mung bean pancakes), mayak gimbap, and japchae are must-tries and very kid-friendly. Grandma can sit at a stall while adults take turns exploring. The covered arcade means no weather worries.</div>
+        <span class="tag t-food">Food</span><span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Stalls have stools &mdash; grab seats and let the ajummas serve you. Point and order; no Korean needed.</div>
+        <div class="allergy-note">Allergy: Show the allergy card to each stall vendor before ordering. Bindaetteok, japchae, and mayak gimbap are generally peanut-free. Avoid any stall selling peanut candy, peanut-glazed snacks, or items with unknown mixed sauces &mdash; these are common in Korean markets. Do not share utensils between the child and any peanut-containing dishes.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Myeongdong Kyoja &mdash; snack stop<span class="area-chip">Myeongdong</span></div><div class="card-time">2:00 PM</div></div>
+        <div class="card-desc">Taxi back to Myeongdong. Pop into the legendary Myeongdong Kyoja for kalguksu (knife-cut noodles) or mandu (dumplings) as a light post-market snack. Queue moves fast.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: One of Seoul's most famous noodle institutions. Go early to beat the afternoon queue.</div>
+        <div class="allergy-note">Allergy: Kalguksu and mandu are traditionally made without peanuts. Show the allergy card and confirm with staff. The soy-vinegar dumpling dipping sauce is generally safe &mdash; but verify before the child uses it.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Olive Young Flagship + Myeongdong street stalls<span class="area-chip">Myeongdong</span></div><div class="card-time">3:00 PM</div></div>
+        <div class="card-desc">Myeongdong's Olive Young flagship spans multiple floors &mdash; skincare, haircare, K-beauty, and snacks. Adults shop in shifts while one person watches the kids. Then hit the street stalls: tornado potato, egg bread, and tteokbokki for the kids. Keep receipts for tourist tax refund.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Also check Lotte Department Store (short walk) for higher-end beauty and a food hall basement where grandma can rest over tea.</div>
+        <div class="allergy-note">Allergy: Tornado potato, egg bread, and tteokbokki at street stalls are generally peanut-free. Avoid stalls with obvious nut toppings or peanut candy. Olive Young sells food snacks &mdash; check ingredient labels on any packaged item before purchasing for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Cafe rest break</div><div class="card-time">4:45 PM</div></div>
+        <div class="card-desc">Everyone recharges. Find a spacious cafe &mdash; bingsu or hotteok for the kids, coffee for the adults. Reorganise shopping bags and check that grandma's doing well before the evening leg.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: Some bingsu toppings include peanut powder or mixed nuts &mdash; request plain toppings only (red bean, fruit, or condensed milk). Hotteok (cinnamon-sugar pancake) is generally peanut-free. Show the allergy card before ordering any item for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Namsan Tower &mdash; cable car at dusk<span class="area-chip">Namsan</span></div><div class="card-time">5:30 PM</div></div>
+        <div class="card-desc">The cable car up is scenic and effortless &mdash; grandma-friendly. Kids love the love-lock fence and the panoramic city view as the lights come on. Skip the observatory if energy is low; the free outdoor deck and cable car ride alone are worth it.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Time your cable car ride for just before dusk for a spectacular sunset over the city.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Wangbijib Centre Store (왕비집)<span class="area-chip">Myeongdong</span></div><div class="card-time">7:15 PM</div></div>
+        <div class="card-desc">A well-loved Myeongdong institution for charcoal-grilled Korean BBQ &mdash; established 2006 and a consistent crowd favourite for quality meats, attentive staff-grilled service, and generous banchan. The restaurant is conveniently on the walk back from Namsan Tower toward the Splaisir. Experienced servers grill the meat at the table, judging thickness and heat for perfect results every time.<br><br>
+        <strong>&#128205; Address:</strong> 45 Myeongdong 8na-gil, Jung-gu, Seoul<br>
+        (서울특별시 중구 명동8나길 45)<br><br>
+        <strong>Signature dishes to order:</strong><br>
+        &bull; <strong>Handmade Pork Ribs / Suje Dwaeji Galbi (수제 돼지갈비)</strong> &mdash; the house standout; thick, slow-charcoal-grilled pork ribs with a homemade sauce, incredibly tender with just the right fat. Best paired with the green onion salad (pa-muchim) with egg yolk<br>
+        &bull; <strong>Soy-Marinated King Galbi (간장 왕갈비)</strong> &mdash; premium soy-marinated beef short ribs, deeply flavourful and excellent for sharing<br>
+        &bull; <strong>Pork Belly / Samgyeopsal (삼겹살)</strong> &mdash; the reliable classic; clean, simple, great for kids<br>
+        &bull; <strong>Iberico Pork Neck (이베리코 목살)</strong> &mdash; a premium cut with excellent marbling, a step up from standard pork neck<br>
+        &bull; <strong>Korean Beef Sirloin / Ansim (한우 안심)</strong> &mdash; premium Hanwoo sirloin for those wanting a beef option alongside the pork<br><br>
+        All BBQ sets come with steamed rice, soup, and a spread of refillable banchan including kimchi, green onion salad, pickled vegetables, and cabbage salad.<br><br>
+        &#128276; <strong>Reservation reminder:</strong> Make a reservation at least one month in advance. The restaurant is popular with both locals and tourists &mdash; walk-ins during peak evening hours can face long waits, especially with a large group. Check for reservation options via Naver or contact the restaurant directly.<br><br>
+        <strong>Nearby Wangbijib alternatives if the Centre Store has a long queue:</strong><br>
+        &bull; <strong>Wangbijib Main Store (왕비집 명동본점)</strong> &mdash; 26 Myeongdong 8ga-gil, Jung-gu, 2F &middot; ~200m, ~3 min walk<br>
+        &bull; <strong>Wangbijib 2nd Store (왕비집 명동2호점)</strong> &mdash; 26 Myeongdong 8ga-gil, 2F Beautiplex Building, Jung-gu &middot; ~200m, ~3 min walk</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: The Handmade Pork Ribs are the reason to come &mdash; order at least two portions for the group. Let the staff grill for you; they know exactly how to handle the charcoal. The green onion salad with egg yolk is a highlight banchan &mdash; it is refillable, so ask for more. Wrap grilled meat in the lettuce or perilla leaves provided, add a dab of doenjang paste, and eat in one bite.</div>
+        <div class="allergy-note">Allergy: Korean BBQ marinades at Wangbijib use soy sauce, sesame oil, and garlic &mdash; generally peanut-free. Show the allergy card on arrival and confirm with staff that no peanut oil is used in any marinade, banchan, or dipping sauce before the child eats. The sesame-based dipping sauce is safe; double-check any unfamiliar sauce before the child uses it.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Night market wind-down</div><div class="card-time">8:30 PM</div></div>
+        <div class="card-desc">One last loop through Myeongdong's evening stalls &mdash; strawberry mochi, fishcake skewers, or hotteok before the walk back to the hotel.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="allergy-note">Allergy: Mochi, fishcake skewers, and hotteok are generally peanut-free. Avoid stalls selling peanut-coated rice cakes or nut-topped sweets. Verify before letting the child eat any unfamiliar item.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 2: 1 JUN ==================== -->
+  <div class="day-panel" id="panel-2">
+    <div class="day-header">1 June 2026 &mdash; Seoul Hongdae &amp; Gangnam</div>
+    <div class="day-sub-line">Hongdae &middot; Hello Kitty Cafe &middot; Noryangjin Fish Market &middot; COEX Mall &amp; Aquarium &middot; Gebang Sikdang dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Breakfast 8:30 AM &middot; Hongdae shopping 9:30 AM &middot; Hello Kitty cafe 11:00 AM &middot; Noryangjin Fish Market lunch 12:30 PM &middot; Transit to Gangnam 2:00 PM &middot; COEX Mall + SEA LIFE Aquarium 2:30 PM &middot; COEX cafe break 4:45 PM &middot; Gebang Sikdang dinner 6:30 PM &middot; Cafe Cinnamon dessert 8:00 PM</div>
+    <div class="note">&#9888;&#65039; <strong>Noryangjin note:</strong> The fish market involves stairs and wet floors &mdash; not ideal for grandma. Consider one adult taking the older kids while grandma and younger ones rest at a nearby cafe, then regroup for COEX.</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> Show the Korean allergy card at every food stop. At Noryangjin, avoid any sauce unless confirmed peanut-free. At Gebang Sikdang, ganjang gejang and soy-based dishes are generally peanut-free &mdash; confirm side dishes with staff. At character cafes, ask about shared equipment and nut-based ingredients in desserts.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast &mdash; hotel or nearby cafe</div><div class="card-time">8:30 AM</div></div>
+        <div class="card-desc">Fuel up before the Hongdae morning. A hotel buffet or a nearby Paris Baguette (Korean bakery chain, very family-friendly) works well. Get an early start &mdash; Hongdae is best explored before the afternoon crowds.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: At Paris Baguette, many pastries are made on shared equipment. Choose clearly labelled items and ask about peanut cross-contamination at the counter. Plain bread, croissants, and rice-based items are lower risk. Show the allergy card before ordering for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Hongdae Shopping Street<span class="area-chip">Hongdae</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">Take a taxi from Myeongdong (~20 min). Hongdae is Seoul's youth culture hub &mdash; indie fashion, K-pop merch, character goods, and street art. The main shopping streets are flat and walkable. Kids will love the quirky character shops and street performers. Good Olive Young branches here too.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Aha! and Kakao Friends Store are great for affordable character goods. Grandma can rest at a street cafe while the group explores.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Hello Kitty / character cafe<span class="area-chip">Hongdae</span></div><div class="card-time">11:00 AM</div></div>
+        <div class="card-desc">Hongdae is home to several themed cafes including Hello Kitty-themed spots. Kids aged 5&ndash;11 are in the sweet spot for these &mdash; themed drinks, desserts, and photo ops. Grandma gets a proper sit-down rest while the kids have a moment they'll talk about for months.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Search "Hello Kitty cafe Hongdae" closer to your trip date to confirm current location &mdash; themed cafes occasionally relocate.</div>
+        <div class="allergy-note">Allergy: Themed cafes often serve desserts made on shared equipment. Show the allergy card before ordering; ask specifically about peanut content in cakes, cookies, and drink powders. Plain drinks (tea, juice, milk) are lower risk than blended dessert drinks with unknown mix-ins.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Noryangjin Fish Market &mdash; adventurous lunch<span class="area-chip">Noryangjin</span></div><div class="card-time">12:30 PM</div></div>
+        <div class="card-desc">Taxi or Line 1 subway (~15 min from Hongdae). Pick live seafood from the market stalls downstairs, then take it upstairs to a restaurant to have it cooked. Sashimi, grilled fish, and haemul tang (seafood stew) are highlights. Wet floors and stairs make this tricky for grandma &mdash; split the group here if needed.</div>
+        <span class="tag t-food">Food</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Point at what you want in the tanks &mdash; no Korean needed. Prices are per 100g, so confirm before buying.</div>
+        <div class="allergy-note">Allergy: Plain grilled or raw seafood with soy-wasabi dipping sauce is generally safe. Avoid any marinades or mixed sauces unless peanut-free status is confirmed. Show the allergy card to the upstairs restaurant before they prepare your food. Ask specifically about cooking oils &mdash; confirm sesame oil is used, not peanut oil.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Transit to Gangnam &mdash; rest en route</div><div class="card-time">2:00 PM</div></div>
+        <div class="card-desc">Taxi to COEX Mall in Gangnam (~25 min). Use the ride as a rest window &mdash; grandma and the younger kids can doze or decompress before the COEX leg.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">COEX Mall + SEA LIFE Aquarium<span class="area-chip">Gangnam</span></div><div class="card-time">2:30 PM</div></div>
+        <div class="card-desc">COEX is a massive underground mall &mdash; fully air-conditioned, flat, and very grandma-friendly. SEA LIFE Coex Aquarium is a highlight for the kids: sharks, rays, and touch pools. After the aquarium, explore the Starfield Library (stunning bookshelf installation) and browse the character/toy shops.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Pre-book aquarium tickets online to skip queues. The Starfield Library is free and one of Seoul's most Instagrammable spots.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">COEX cafe break</div><div class="card-time">4:45 PM</div></div>
+        <div class="card-desc">COEX has dozens of cafes &mdash; find a spacious one and let grandma rest while the kids finish any last browsing. Good moment for adults to consolidate bags and regroup before dinner.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: Show the allergy card at any COEX cafe before ordering. Avoid baked goods with nut toppings or unclear fillings. Coffee, plain milk drinks, and fresh juice are safe choices.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Gebang Sikdang (게방식당)<span class="area-chip">Gangnam</span></div><div class="card-time">6:30 PM</div></div>
+        <div class="card-desc">A Michelin Bib Gourmand restaurant specialising in gejang &mdash; raw blue crab marinated in a deeply umami soy sauce, widely nicknamed the "rice thief" (밥도둑) because the rich, savoury flavour is irresistible with warm rice. The restaurant uses only domestic female blue crabs and a proprietary soy marinade fermented with dried seafood and vegetables. Modern, polished interior that feels more like a stylish cafe than a traditional crab house. Reservations on Catchtable recommended.<br><br>
+        <strong>&#128205; Address:</strong> 17 Seolleung-ro 131-gil, Nonhyeon-dong, Gangnam-gu, Seoul<br>
+        (서울특별시 강남구 논현동 선릉로 131길 17)<br>
+        Nearest station: Gangnam-gu Office Station (Bundang Line / Yellow Line)<br>
+        Tel: 010-8479-1107 &middot; Hours: 11:30 AM&ndash;3:00 PM, 5:30 PM&ndash;9:00 PM (Mon&ndash;Sat, closed Sun)<br><br>
+        <strong>Signature dishes to order:</strong><br>
+        &bull; <strong>Ganjang Gejang (간장게장)</strong> &mdash; soy sauce-marinated raw blue crab, the house speciality. Eat the crab meat by scraping from the shell, then mix the roe and sauce into warm rice and wrap in roasted seaweed &mdash; this is the defining bite<br>
+        &bull; <strong>Yangnyeom Gejang (양념게장)</strong> &mdash; spicy marinated crab, for those who want heat alongside the richness<br>
+        &bull; <strong>Ganjang Saeu (간장새우)</strong> &mdash; soy sauce-marinated shrimp, similarly umami-packed and excellent with rice<br>
+        &bull; <strong>Gejang Bibimbap (게장비빔밥)</strong> &mdash; marinated crab mixed rice bowl, a good option for those who prefer not to eat directly from the shell<br>
+        &bull; <strong>Kkotgetang (꽃게탕)</strong> &mdash; spicy blue crab stew, a heartier cooked alternative<br><br>
+        Set menus come with steamed rice, soup (clam seaweed soup or similar), and a selection of refillable side dishes including salad, tofu, kimchi, and vegetables.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: The ganjang gejang is the reason to come &mdash; order it for the table. The trick is to scoop the creamy roe and sauce from inside the shell onto your rice, then wrap it in seaweed. This is finger food; there is no graceful way to eat crab on the shell &mdash; lean in and enjoy it. All side dishes except rice and soup are refillable. For children who may be hesitant about raw crab, the gejang bibimbap is a gentler entry point.</div>
+        <div class="allergy-note">Allergy: Ganjang gejang, soy-marinated shrimp, and crab stew are all soy-based &mdash; no peanut ingredients in the primary dishes. Show the allergy card before ordering and confirm with staff that no peanut oil or peanut-based ingredients are used in any side dish or seasoning sauce. This is one of the more peanut-safe dinners of the Seoul leg.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Cafe Cinnamon + last dessert run</div><div class="card-time">8:00 PM</div></div>
+        <div class="card-desc">End with a visit to Cafe Cinnamon if open and nearby &mdash; a cosy, whimsical cafe that fits the trip's character cafe theme. Otherwise, grab dessert from a patbingsu or hotteok stall before the taxi back to Myeongdong.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm Cafe Cinnamon's current location before visiting &mdash; smaller cafes in Seoul sometimes move or change hours.</div>
+        <div class="allergy-note">Allergy: Show the allergy card at any dessert cafe before ordering. For patbingsu, request plain toppings only (red bean or fruit &mdash; not mixed nuts). For hotteok, check that the filling is cinnamon-sugar and not peanut &mdash; peanut hotteok variants exist at some stalls.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Convenience store run &mdash; breakfast for tomorrow<span class="area-chip">Myeongdong</span></div><div class="card-time">~9:30 PM</div></div>
+        <div class="card-desc">On the way back to the hotel, both families stop at a CU or GS25 near the Splaisir to buy breakfast for the next morning. Both Kelvin's family (departing ~7:45 AM) and Kendrick's family (departing 8:30 AM) will be checking out before the hotel buffet opens at 7:00&ndash;10:00 AM. Stock up on kimbap, onigiri, triangle rice balls, banana milk, juices, and individual pastries &mdash; enough for both families to eat in the hotel lobby or room before leaving.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: Korean convenience stores are excellent &mdash; kimbap and onigiri are freshly stocked and make a perfectly decent breakfast. Pick up enough for everyone and refrigerate overnight. CU and GS25 both have branches within a 2&ndash;3 minute walk of the Splaisir.</div>
+        <div class="allergy-note">Allergy: Check every item's ingredient label carefully in the store before purchasing for the child. Avoid products with peanut or tree nut ingredients, mixed fillings, or unclear labelling. Plain tuna, salmon, or pickled plum onigiri and plain kimbap rolls are the safest choices. Banana milk and plain juice cartons are peanut-free.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 3: 2 JUN ==================== -->
+  <div class="day-panel" id="panel-3">
+    <div class="day-header">2 June 2026 &mdash; Seoul to Jeju</div>
+    <div class="day-sub-line">Kendrick's family: check-out Splaisir &middot; Klook van to GMP &middot; OZ8941 &middot; wait at CJU &middot; Kelvin's family: own travel to GMP &middot; TW709 &middot; Full group: Klook van to Shilla Stay &middot; Dongmun Market &middot; Dombedon or Hwaro Hyang dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Kendrick family: convenience store breakfast + check-out 7:00 AM &middot; Klook van to GMP 8:30 AM &middot; OZ8941 departs GMP 11:20 AM &middot; Arrives CJU 12:35 PM &middot; Wait at CJU for Kelvin family &middot; Kelvin family (incl. Grandma): convenience store breakfast + check-out ~7:30 AM &middot; own travel to GMP &middot; TW709 departs GMP 10:20 AM &middot; Arrives CJU 11:35 AM &middot; Wait ~60 min at CJU &middot; Full group reunites CJU ~12:50 PM &middot; Klook van(s) to Shilla Stay ~1:10 PM &middot; Check-in 3:00 PM &middot; Dongmun Market 5:00 PM &middot; Dombedon or Hwaro Hyang dinner 7:00 PM</div>
+    <div class="note">&#8505;&#65039; <strong>Check-in heads-up:</strong> Shilla Stay Jeju Airport check-in is strictly 3:00 PM. The full group will arrive at the hotel around 1:10&ndash;1:20 PM &mdash; plan for roughly 1h 45min before rooms are ready. Kelvin's family (including Grandma) arrives CJU at 11:35 AM and will wait approximately 60&ndash;75 min at CJU for Kendrick's family. CJU is a small domestic airport with limited seating and food options &mdash; Kelvin's family should be prepared for a modest wait.</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> Show the Korean allergy card at every restaurant and market stall. At Dongmun Market street food stalls, confirm each item before the child eats. At Black Pork Street restaurants, confirm no peanut oil is used in marinades or banchan.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast &mdash; convenience store food from the night before<span class="area-chip">Sotetsu Hotels The Splaisir</span></div><div class="card-time">7:00 AM</div></div>
+        <div class="card-desc">Both families eat the breakfast bought from the convenience store the previous evening &mdash; kimbap, onigiri, banana milk, and pastries in the hotel room or lobby before checking out. The hotel buffet does not open until 7:00&ndash;10:00 AM and both families need to be on the move before that window suits. <strong>Kelvin's family</strong> (including Grandma) should aim to finish breakfast and check out by 7:30&ndash;7:45 AM. <strong>Kendrick's family</strong> can take until 8:30 AM.</div>
+        <span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Settle any outstanding charges the evening before to speed up both families' check-outs. Coordinate luggage separately to avoid congestion at the front desk.</div>
+        <div class="allergy-note">Allergy: Labels were already checked at the convenience store the night before &mdash; confirm once more before giving any item to the child in the morning. Stick to the items confirmed safe the previous evening.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; own transfer to GMP (incl. Grandma)<span class="area-chip">Myeongdong &rarr; GMP</span></div><div class="card-time">~7:45 AM</div></div>
+        <div class="card-desc">Kelvin's family, including Grandma, arranges their own transport from the Splaisir to GMP. A Kakao Taxi or Comfort taxi is the simplest option &mdash; book in advance via the app for a ~7:45&ndash;8:00 AM pickup. GMP is approximately 40&ndash;50 min from Myeongdong. Aim to arrive at GMP by 8:30&ndash;8:45 AM, giving around 1.5 hours before TW709 departs at 10:20 AM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Book the Kakao Taxi the evening before for a smooth early morning pickup. Ensure Grandma boards comfortably &mdash; confirm the taxi has adequate luggage space for the group. GMP domestic check-in is straightforward; check in at the T'way Air counter.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; departs GMP on TW709<span class="area-chip">GMP &rarr; CJU</span></div><div class="card-time">10:20 AM</div></div>
+        <div class="card-desc">T'way Air TW709 departs Gimpo at 10:20 AM and arrives Jeju International Airport (CJU) at 11:35 AM &mdash; a 75-minute domestic hop. Kelvin's family, including Grandma, lands first and exits to the domestic arrivals hall. They will wait approximately 60&ndash;75 minutes at CJU for Kendrick's family to arrive. CJU's arrivals area has limited seating and a small convenience store — Grandma should be seated comfortably while the rest of Kelvin's family keeps the kids entertained during the wait.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Share the Klook driver's contact number with Kelvin's family in advance so they can coordinate at CJU arrivals. Confirm the agreed meeting point &mdash; the arrivals exit is compact, so finding each other will be straightforward.</div>
+        <div class="allergy-note">Allergy: Notify the T'way flight attendant of the severe peanut allergy on boarding. Bring safe snacks &mdash; skip any airline snack items unless confirmed peanut-free.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; Klook minivan to GMP<span class="area-chip">Myeongdong &rarr; GMP</span></div><div class="card-time">8:30 AM</div></div>
+        <div class="card-desc">Kendrick's family departs the Splaisir in the pre-booked Klook minivan. GMP is approximately 40&ndash;50 min from Myeongdong. Aim to arrive by 9:30 AM for the 11:20 AM OZ8941 departure.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm the Klook pickup point with the driver the day before. GMP domestic departures are straightforward; check in at the Asiana Airlines counter.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; departs GMP on OZ8941<span class="area-chip">GMP &rarr; CJU</span></div><div class="card-time">11:20 AM</div></div>
+        <div class="card-desc">Asiana Airlines OZ8941 departs Gimpo at 11:20 AM and arrives Jeju International Airport (CJU) at 12:35 PM &mdash; a 75-minute hop. GMP's domestic terminal is compact and stress-free. Kelvin's family will be waiting at CJU arrivals.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: No immigration at CJU &mdash; just baggage claim and exit. Should be out and reunited with Kelvin's family by approximately 12:50&ndash;1:00 PM.</div>
+        <div class="allergy-note">Allergy: Notify the Asiana flight attendant of the severe peanut allergy on boarding. Bring safe snacks &mdash; skip any airline snack items unless confirmed peanut-free.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Full group reunites &mdash; Klook van(s) to Shilla Stay<span class="area-chip">CJU &rarr; Shilla Stay</span></div><div class="card-time">~12:50 PM</div></div>
+        <div class="card-desc">With both families now together at CJU, the full group travels to Shilla Stay Jeju Airport. Note: confirm whether the Klook minivan booked for Kendrick's family has sufficient capacity for the full combined group including Kelvin's family and Grandma. If not, book a second vehicle in advance. Shilla Stay is approximately 10 minutes from CJU &mdash; expect arrival around 1:10&ndash;1:20 PM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm combined group capacity with Klook when booking. If a second van is needed, book it to meet at CJU arrivals at the same time so both families travel together without waiting.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Early arrival &mdash; lobby rest &amp; light lunch near hotel<span class="area-chip">Jeju City</span></div><div class="card-time">~1:15 PM</div></div>
+        <div class="card-desc">Rooms won't be ready until 3:00 PM and check-in is strictly enforced. Drop all luggage at the front desk for storage. Grandma can rest in the hotel lobby while others head out for a light lunch nearby. The hotel is walkable to cafes and casual restaurants. Coordinate a meeting point for the full group &mdash; either the hotel lobby or a nearby restaurant.</div>
+        <span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Request early check-in when making your reservation &mdash; the hotel may accommodate if rooms are available, though it's not guaranteed. Shilla Stay enforces 3:00 PM strictly.</div>
+        <div class="allergy-note">Allergy: For the light lunch, choose a sit-down restaurant so you can show the allergy card and confirm ingredients. Korean soup restaurants (doenjang jjigae, seolleongtang) are generally safe choices.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Check-in &mdash; Shilla Stay Jeju Airport<span class="area-chip">Jeju City</span></div><div class="card-time">3:00 PM</div></div>
+        <div class="card-desc">Shilla Stay Jeju Airport is a 4-star property with 301 rooms, a fitness centre, and a buffet restaurant. Full group checks in together. Get everyone settled &mdash; Grandma in particular should have time to rest comfortably before the evening out. The hotel is centrally located with easy access to the Dongmun Market area.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: The hotel is close to Shilla and Lotte duty-free shopping malls. Good base for the Jeju City leg of the trip.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dongmun Market Food Street<span class="area-chip">Jeju City</span></div><div class="card-time">5:00 PM</div></div>
+        <div class="card-desc">Dongmun Traditional Market is the largest and oldest permanent traditional market in Jeju. The street food stalls at the rear open from around 5:00 PM (May&ndash;October). Don't go hungry &mdash; this is for sampling and atmosphere before the black pork dinner. Bring cash as many vendors are cash-only. Reference list for what to look out for:<br><br>
+        <strong>Savoury &amp; seafood</strong><br>
+        &bull; Grilled Abalone (전복구이)<br>
+        &bull; Abalone Kimbap (전복김밥)<br>
+        &bull; Octopus Kimchi (문어김치)<br>
+        &bull; Hand-Pulled Belt Fish (Galchi) Sticks<br><br>
+        <strong>Jeju snacks &amp; sweets</strong><br>
+        &bull; Cheesy Octopus Bread (문어빵)<br>
+        &bull; Hallabong Tangerine Juice<br>
+        &bull; Hallabong Ice Cream<br><br>
+        <strong>&#10060; Skip these:</strong><br>
+        &bull; "Fire Show" Rolls &mdash; the blow-torch spectacle is for show; quality and freshness are inconsistent<br>
+        &bull; Pre-Packaged "Market" Sushi &mdash; often sitting out; not fresh enough to justify the risk</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span>
+        <div class="tip">Tip: Grilled abalone and abalone kimbap are the Jeju-specific highlights here &mdash; don't miss them. The cheesy octopus bread (문어빵) is a crowd favourite with the kids. Keep portions light &mdash; the black pork dinner follows and you'll want to arrive hungry.</div>
+        <div class="allergy-note">Allergy: Market stalls present cross-contamination risk &mdash; show the allergy card to each vendor before purchasing food for the child. Specific risks to note: Udo peanut ice cream is sold at Dongmun Market stalls &mdash; keep the child away from any stall selling this as cross-contamination from shared scoops and surfaces is a real risk. Hotteok (sweet filled pancakes) may contain crushed peanuts in the filling &mdash; do not give to the child unless the vendor explicitly confirms it is a cinnamon-sugar filling with no peanuts. When in doubt about any item, skip it entirely.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Dombedon (돔베돈) or Hwaro Hyang (화로향)<span class="area-chip">Black Pork Street, Jeju City</span></div><div class="card-time">7:00 PM</div></div>
+        <div class="card-desc">Both restaurants are on Jeju's famous Black Pork Street (흑돼지거리) &mdash; a dedicated strip of restaurants specialising in heukdwaeji (Jeju black pork), a short walk from Dongmun Market. Jeju black pork is marbled, tender, and slightly sweeter than regular pork &mdash; a genuine Jeju speciality not to be missed on arrival night.<br><br>
+        <strong>Option 1 &mdash; Dombedon (돔베돈)</strong><br>
+        &#128205; 25 Gwandeong-ro 15(sibo)-gil, Geonip-dong, Jeju-si (제주시 건입동 관덕로15(십오)길 25)<br>
+        Tel: +82 64-753-0008 &middot; Hours: 11:00 AM&ndash;11:00 PM daily<br>
+        The busiest restaurant at the entrance of Black Pork Street &mdash; look for the little pig welcome signboard. Specialises in a wide range of heukdwaeji cuts and is famous for its dombe gogi (돔베고기), the restaurant's namesake dish: steamed slices of Jeju black pork served on a wooden chopping board, a traditional Jeju preparation. Signature dishes:<br>
+        &bull; <strong>Jeju Heukdwaeji Set (제주흑돼지세트)</strong> &mdash; the house set combining heukdwaeji gui (grilled black pork), dombe gogi (steamed pork on chopping board), and doenjang jjigae<br>
+        &bull; <strong>Heuk Ogyeopsal (흑오겹살)</strong> &mdash; grilled skin-on black pork belly, uniquely Jeju<br>
+        &bull; <strong>Heuk Hangjeongsal (흑항정살)</strong> &mdash; grilled black pork neck, tender and intensely flavoured<br>
+        &bull; <strong>Dombe Gogi (돔베고기)</strong> &mdash; steamed and sliced pork served on a wooden board, a Jeju dialect specialty<br><br>
+        <strong>Option 2 &mdash; Hwaro Hyang (화로향)</strong><br>
+        &#128205; 27 Gwandeok-ro 15-gil, Jeju-si (제주시 관덕로 15길 27)<br>
+        Tel: +82 64-724-4050 &middot; Hours: 5:00 PM&ndash;midnight daily (last order 11:00 PM)<br>
+        The second restaurant on the left at the entrance to Black Pork Street &mdash; popular with locals and consistently praised for friendly, attentive owners who often cook your meat at the table. A quieter, less tourist-facing feel than Dombedon. Signature dishes:<br>
+        &bull; <strong>Heukdwaeji Samgyeopsal (흑돼지삼겹살)</strong> &mdash; grilled black pork belly, the house staple<br>
+        &bull; <strong>Heukdwaeji Moksal (흑돼지목살)</strong> &mdash; grilled black pork neck<br>
+        &bull; <strong>Abalone (전복)</strong> &mdash; a popular add-on; reviewers specifically highlight the quality<br>
+        Minimum 2 portions triggers 3 complimentary dishes: steamed egg in hot pot (gyeran-jjim), doenjang jjigae (soybean paste stew), and cold noodles (naengmyeon)<br><br>
+        &#128276; <strong>Reservation reminder:</strong> Make reservations at least one month in advance for both restaurants, especially for a large combined group. Black Pork Street is one of Jeju's most popular dinner destinations &mdash; prime evening slots fill early. Call directly or reserve via Naver.<br><br>
+        Both restaurants are a short walk from Dongmun Market. The full group (both families) will be dining together for the first time in Jeju &mdash; a celebratory first dinner on the island.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: The dombe gogi at Dombedon is a uniquely Jeju way to eat pork &mdash; steamed rather than grilled, served on a wooden board and eaten by dipping slices in fermented shrimp paste (saeujeot) or doenjang. Order it alongside the grilled cuts for variety. At Hwaro Hyang, ask the owner to help grill &mdash; they take pride in cooking for guests and judge doneness expertly. Wrap grilled pork in perilla leaves or lettuce with a dab of doenjang paste and garlic.</div>
+        <div class="allergy-note">Allergy: Jeju black pork BBQ uses sesame oil, soy sauce, and garlic in marinades &mdash; generally peanut-free. Show the Korean allergy card on arrival at whichever restaurant you choose and confirm with staff that no peanut oil is used in any marinade, banchan, or dipping sauce before the child eats. Doenjang jjigae and steamed egg are safe; the fermented shrimp paste (saeujeot) dipping sauce is also peanut-free but confirm each banchan dish individually.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 4: 3 JUN ==================== -->
+  <div class="day-panel" id="panel-4">
+    <div class="day-header">3 June 2026 &mdash; Jeju west coast with Kook driver</div>
+    <div class="day-sub-line">9.81 Park (Aewol) &middot; Osulloc Tea Museum &middot; Hyeopjae Beach &middot; abalone lunch &middot; Beryl Cafe &middot; Jeju City dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Breakfast 7:00 AM &middot; Kook driver departs 9:00 AM &middot; 9.81 Park Aewol 9:30 AM &middot; Osulloc Tea Museum 11:30 AM &middot; Abalone lunch Hyeopjae 1:00 PM &middot; Hyeopjae Beach swim 2:15 PM &middot; Beryl Cafe 3:30 PM &middot; Return to Jeju City 4:30 PM &middot; Abalone dinner Jeju City 7:00 PM</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy &mdash; read before every meal stop:</strong> Carry EpiPen at all times. Show the Korean allergy card at every restaurant and cafe. At Osulloc, peanut-flavoured teas and products are sold in the shop &mdash; do not let the child try any unlabelled sample. At Hyeopjae seafood restaurants, confirm no peanut oil is used in cooking. When in doubt, skip the item.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast &mdash; Shilla Stay hotel buffet<span class="area-chip">Jeju City</span></div><div class="card-time">7:00 AM</div></div>
+        <div class="card-desc">Start with the hotel breakfast buffet (weekends: 7:00&ndash;10:00 AM). Today is a full west coast day with a lot of driving, so a proper seated breakfast is essential &mdash; especially for grandma and the younger kids.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: Steer clear of mixed nut trays, any sauce with satay or peanut bases, and unlabelled desserts. Stick to items with clear, visible ingredients.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kook driver departs &mdash; head to Aewol<span class="area-chip">Jeju City &rarr; Aewol</span></div><div class="card-time">9:00 AM</div></div>
+        <div class="card-desc">Pickup from Shilla Stay. Suggested route: northwest to 9.81 Park in Aewol (~30 min), then south to Osulloc Tea Museum (~25 min), then north to Hyeopjae Beach for lunch and the beach stop (~15 min), before returning to Jeju City for dinner.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Brief the Kook driver on the allergy on the day &mdash; they may be able to advise on safe restaurant options along the route.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">9.81 Park<span class="area-chip">Aewol</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">Korea's first non-motorised gravity racing theme park, set between the Aewol coastline and Hallasan Mountain &mdash; Jeju's No.1 rated attraction. The signature activity is Race 981: gravity karts that race downhill at speeds powered only by gravity (9.81 m/s²), with breathtaking views of the Jeju sea on the descent and Hallasan on the auto-return uphill track. Three kart types and multiple courses are available. Beyond racing, the park has laser tag (Arena), smart LED bumper cars (Ring°°Go), a 360° Heal Swing, an interactive Sports Lab with 15 games, VR racing (Meta 981), cafes, and a brand store. Open 09:00&ndash;18:20 daily. Allow 2 hours. Tickets purchased on-site or via the 9.81 Park app.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: Check height and age requirements for Race 981 on the 9.81 Park website before visiting &mdash; the gravity karts have minimum height restrictions (typically around 110&ndash;120cm) that may affect the youngest children. The indoor activities (bumper cars, laser tag, Sports Lab) are open to all ages. Download the 9.81 Park app in advance to track race times and videos. A free shuttle bus runs daily from Jeju Airport and Shilla Duty-Free &mdash; check the schedule on their website if the Kook driver arrangement changes. 3 June is a Wednesday &mdash; a weekday, good for lighter queues.</div>
+        <div class="allergy-note">Allergy: The park's cafes and food outlets (Brocollege, Booster Station, Onatz, Lounge X) serve food and drinks. Show the allergy card before ordering anything for the child. Avoid any snacks with unclear ingredients. The Onatz cream-filled glutinous rice donuts are a Jeju exclusive &mdash; confirm peanut-free with staff before purchasing for the child.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Osulloc Tea Museum<span class="area-chip">Seogwang, Seogwipo</span></div><div class="card-time">11:30 AM</div></div>
+        <div class="card-desc">A stunning modernist museum building set against sweeping green tea fields, with Hallasan mountain as a backdrop. The cafe and tea field views are exceptional. Order the green tea soft serve ice cream and browse the gift shop. Innisfree cosmetics store also on site. Allow 45&ndash;60 min. Free admission; open from 9:00 AM (summer hours until 7:00 PM).</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span>
+        <div class="tip">Tip: The outdoor tea field walk is brief but beautiful &mdash; great for family photos. Stock up on gift-worthy tea sets and green tea snacks in the shop.</div>
+        <div class="allergy-note">Allergy: Osulloc's shop sells peanut-flavoured teas and products alongside other varieties. Do NOT let the child try any unlabelled samples &mdash; the counter hands out free tastings. Read packaging carefully before purchasing any food item for the child. The green tea soft serve is peanut-free; confirm before buying.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Abalone lunch &mdash; SuSeonHwa or similar near Hyeopjae<span class="area-chip">Hyeopjae</span></div><div class="card-time">1:00 PM</div></div>
+        <div class="card-desc">Drive north to Hyeopjae Beach for an abalone lunch. SuSeonHwa Restaurant near the beach is well-reviewed for abalone butter rice, abalone porridge, and seafood pasta. Grilled abalone and abalone stone pot rice are the signature dishes, fresh from local Jeju waters. Other restaurants near Hyeopjae also serve grilled hairtail (cutlassfish) for variety.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: Jeju abalone is considerably fresher and more affordable here than in Seoul. Don't miss abalone porridge as a lighter option for grandma.</div>
+        <div class="allergy-note">Allergy: Before ordering, explicitly ask staff whether peanut oil is used in any dish &mdash; especially the butter rice or stir-fried items. Most Jeju seafood restaurants use sesame oil, which is safe. Show the Korean allergy card and confirm each dish before the child eats.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Hyeopjae Beach &mdash; swim and beach time<span class="area-chip">Hyeopjae</span></div><div class="card-time">2:15 PM</div></div>
+        <div class="card-desc">Hyeopjae is one of Jeju's most beautiful beaches &mdash; turquoise water, white sand, and a view of Biyangdo Island offshore. The water is famously shallow and calm, ideal for kids of all ages. June is warm enough for swimming. Let the kids play while grandma rests on the beach.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Pack swimwear, sunscreen, and a change of clothes for the kids. Beach rental chairs and umbrellas are available in summer. The water is shallow well out from shore &mdash; safe for the younger children.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Beryl Cafe &mdash; scenic ocean view stop<span class="area-chip">Hyeopjae</span></div><div class="card-time">3:30 PM</div></div>
+        <div class="card-desc">A short walk from the beach, Beryl Cafe sits directly on the lava rocks with an unobstructed view of Hyeopjae's emerald water &mdash; arguably the best cafe view on Jeju's west coast. A door opens directly onto the rocks above the sea. Grandma sits comfortably indoors looking out while the kids explore the rocks outside. Open Fri&ndash;Wed 11:00 AM&ndash;6:30 PM (3 June is a Wednesday &mdash; open).</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+        <div class="tip">Tip: Small cafe with limited seating &mdash; arrive early or be prepared to wait briefly. The lava rock setting outside makes for extraordinary photos.</div>
+        <div class="allergy-note">Allergy: Confirm with staff that the drinks menu contains no peanut ingredients. Coffee, tea, and juice-based drinks are generally safe; avoid any items with nut toppings or mixed flavour powders unless clearly labelled peanut-free.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Return drive to Jeju City<span class="area-chip">Hyeopjae &rarr; Jeju City</span></div><div class="card-time">4:30 PM</div></div>
+        <div class="card-desc">The Kook driver takes the group back to Jeju City (~45&ndash;50 min). Use the drive to rest, let the kids nap, and allow grandma to decompress before dinner. Drop at the Shilla Stay to freshen up.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; abalone restaurant, Jeju City<span class="area-chip">Jeju City</span></div><div class="card-time">7:00 PM</div></div>
+        <div class="card-desc">A second abalone meal for dinner &mdash; this time in Jeju City proper. Myeongjin Jeonbok is one of Jeju's most celebrated abalone specialists: grilled abalone, abalone stone pot rice, abalone porridge, and raw abalone. Finish with a short evening walk near the hotel.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: Myeongjin Jeonbok can have queues &mdash; arrive before 6:30 PM if possible. The abalone sizzling stone pot rice is the signature dish worth ordering for the table.</div>
+        <div class="allergy-note">Allergy: At abalone restaurants, confirm no peanut oil is used in marinades, sauces, or side dishes. Korean seafood restaurants typically use sesame and soy-based condiments which are safe &mdash; but always verify explicitly. Show the allergy card before ordering.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 5: 4 JUN ==================== -->
+  <div class="day-panel" id="panel-5">
+    <div class="day-header">4 June 2026 &mdash; Jeju south coast &amp; east with Kook driver</div>
+    <div class="day-sub-line">Seongeup Folk Village &middot; Seogwipo City &middot; Cheonjiyeon Falls &middot; Jusangjeolli Cliffs &middot; Jeju City dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Breakfast 7:30 AM &middot; Kook driver departs 9:00 AM &middot; Seongeup Folk Village (east, 30 min drive) 9:30 AM &middot; Seogwipo City lunch 11:30 AM &middot; Cheonjiyeon Falls 1:00 PM &middot; Jusangjeolli Cliffs 2:15 PM &middot; Jungmun cafe 3:30 PM &middot; Return to Jeju City 4:15 PM &middot; Korean dinner 7:00 PM &middot; Clockwise loop: east &rarr; south &rarr; southwest &rarr; north. Seongeup is placed on 4 Jun as it lies naturally on the way south, avoiding a duplicated eastward drive on 5 Jun.</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> Carry EpiPen at all times. Show the Korean allergy card at every restaurant and food stall. At Seogwipo Maeil Olle Market, confirm each item before the child eats &mdash; market food can contain hidden ingredients. When in doubt, skip the item.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast &mdash; Shilla Stay hotel buffet<span class="area-chip">Jeju City</span></div><div class="card-time">7:30 AM</div></div>
+        <div class="card-desc">Use the hotel breakfast buffet (weekdays: 6:30&ndash;9:30 AM) before departure. Today is a long loop around the island &mdash; a proper breakfast sets up grandma and the kids for a full day in the vehicle and on foot.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: Avoid mixed nut trays and unlabelled spreads at the buffet. Stick to items with clearly visible ingredients &mdash; eggs, plain rice, plain bread, and fruit are safe defaults.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kook driver departs &mdash; head east to Seongeup<span class="area-chip">Jeju City &rarr; east</span></div><div class="card-time">9:00 AM</div></div>
+        <div class="card-desc">Pickup from Shilla Stay. Head east first to Seongeup Folk Village (~30 min), then loop south to Seogwipo City (~40 min), then west along the south coast to Cheonjiyeon Falls and Jusangjeolli Cliffs, before returning north to Jeju City. This clockwise loop is the most efficient routing for all four stops.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Brief the Kook driver on the allergy and confirm the route the evening before. 4 June Thursday is a weekday &mdash; good timing for lighter crowds at the folk village and cliffs.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Seongeup Folk Village<span class="area-chip">Pyoseon, east Jeju</span></div><div class="card-time">9:30 AM</div></div>
+        <div class="card-desc">A living, inhabited village continuously occupied for around 600 years &mdash; one of Jeju's most authentic cultural sites and a National Folklore Cultural Heritage. Walk the narrow lava stone-walled alleys (olle), see thatched-roof hanoks still lived in by residents, and explore the ancient fortress walls, century-old zelkova trees, and Dolhareubang stone statues. <strong>Free entry.</strong> Allow 1.5 hours. Grandma-friendly &mdash; paths are paved and wide throughout.</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Some locals may offer guided tours then expect you to purchase herbal products &mdash; politely decline if not interested. Head for the fortress inner village rather than the outer tourist stalls. Kids can try on hanbok and archery at activity spots.</div>
+        <div class="allergy-note">Allergy: If purchasing any traditional snacks or sweets at village stalls, read packaging carefully and confirm no peanut content before the child eats. Traditional Jeju confections sometimes include peanut-based fillings &mdash; verify before buying.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Lunch &mdash; Seogwipo Maeil Olle Market or seafood restaurant<span class="area-chip">Seogwipo City</span></div><div class="card-time">11:30 AM</div></div>
+        <div class="card-desc">Drive south to Seogwipo City (~40 min). Seogwipo Maeil Olle Market is a covered 620-metre market &mdash; a lively spot for Jeju street food including black pork abalone rolled katsu, tangerine mochi, and local seafood. Grandma can sit while others browse. Alternatively, a sit-down seafood restaurant near Seogwipo harbour is a safer, calmer option for the large group.</div>
+        <span class="tag t-food">Food</span><span class="tag t-culture">Culture</span>
+        <div class="tip">Tip: If you prefer a proper sit-down meal, the harbour area has multiple seafood restaurants with English menus.</div>
+        <div class="allergy-note">Allergy: Market food is high-risk for hidden ingredients. Show the Korean allergy card to each vendor before purchasing. Freshly grilled seafood on skewers with no sauce is generally the safest choice; avoid anything with mixed sauces, marinades, or coatings unless confirmed peanut-free. For best safety, choose the sit-down restaurant option where you can speak clearly to staff.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#1D9E75"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Cheonjiyeon Falls<span class="area-chip">Seogwipo City</span></div><div class="card-time">1:00 PM</div></div>
+        <div class="card-desc">A short drive from the market &mdash; Cheonjiyeon is a dramatic waterfall set in a lush, forested gorge in Seogwipo City. The 400-metre path from the car park winds through subtropical forest to the falls, dropping into a deep emerald pool. Allow 45&ndash;60 min. Accessible path, though uneven in places &mdash; manageable for grandma with care.</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Not to be confused with Cheonjeyeon Falls in Jungmun (different waterfall). Cheonjiyeon is in Seogwipo City itself. Admission approx. &#8361;2,000 per adult.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Jusangjeolli Cliffs (Daepo Columnar Joints)<span class="area-chip">Jungmun, west of Seogwipo</span></div><div class="card-time">2:15 PM</div></div>
+        <div class="card-desc">Drive west (~20 min) to one of Jeju's most iconic geological wonders. Dramatic hexagonal and cubic basalt columns up to 20 metres high along the coast, formed by ancient volcanic lava meeting the sea. A short walk from the car park to the viewing platforms where waves crash against the columns. Allow 45&ndash;60 min. Admission adults &#8361;2,000, children &#8361;1,000.</div>
+        <span class="tag t-culture">Culture</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Viewing platforms are reached by stairs &mdash; grandma may prefer to view from the upper level rather than descending. Wind at the cliffside is strong; bring a light layer and hold the kids near the railings.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Scenic cafe stop &mdash; Jungmun area<span class="area-chip">Jungmun</span></div><div class="card-time">3:30 PM</div></div>
+        <div class="card-desc">The Jungmun resort area has several cafes with sea views &mdash; a good rest stop before the return drive. Look for a cafe with outdoor terracing and ocean views. The Kook driver can advise on current favourites. Allow 30&ndash;40 min before departure for Jeju City.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: At any Jungmun cafe, confirm baked goods, nut-flavoured syrups, or dessert toppings are peanut-free before ordering for the child. Plain coffee, tea, or juice drinks are the lowest-risk choices.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Return drive to Jeju City<span class="area-chip">Jungmun &rarr; Jeju City</span></div><div class="card-time">4:15 PM</div></div>
+        <div class="card-desc">The Kook driver heads north back to Jeju City (~50 min). Use the drive to rest. Drop at the Shilla Stay to freshen up before dinner.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Korean restaurant, Jeju City<span class="area-chip">Jeju City</span></div><div class="card-time">7:00 PM</div></div>
+        <div class="card-desc">A proper Korean dinner to close the south coast day. Options near the Shilla Stay include haenyeo-style seafood, doenjang jjigae and banchan, or galchi jorim (Jeju braised cutlassfish) &mdash; a Jeju signature dish. The area near Dongmun Market has a strong cluster of Korean restaurants suited to a large group.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Galchi (cutlassfish/hairtail) is a Jeju speciality best eaten here &mdash; braised in spicy sauce with radish and served alongside rice and banchan. Look for restaurants that display fresh fish at the entrance.</div>
+        <div class="allergy-note">Allergy: At any Korean restaurant, confirm no peanut oil is used &mdash; sesame oil and soy-based sauces are standard and safe. Show the Korean allergy card before ordering. Galchi jorim, doenjang jjigae, and grilled seafood are generally peanut-free but always verify each dish individually before the child eats.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 6: 5 JUN ==================== -->
+  <div class="day-panel" id="panel-6">
+    <div class="day-header">5 June 2026 &mdash; Ranch Cafe DeleKoomDa &amp; Jeju City afternoon</div>
+    <div class="day-sub-line">Ranch Cafe DeleKoomDa &middot; go-karts &middot; horseback riding &middot; animal feeding &middot; Grand Hyatt Jeju Dream Tower &middot; Korean food dinner</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-shop">Shopping</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance:</strong> Breakfast 7:30 AM &middot; Kook driver departs 9:00 AM &middot; Ranch Cafe DeleKoomDa 9:35 AM &middot; Go-karts, horseback riding &amp; animal feeding &middot; Light lunch at ranch cafe 12:00 PM &middot; Return to Jeju City 1:30 PM &middot; Rest at hotel 2:00 PM &middot; Grand Hyatt Dream Tower &mdash; HAN Collection + Grand Plaza 3:00 PM &middot; Chilseong Street wander 5:00 PM &middot; Korean dinner 7:00 PM &middot; Note: Hamdeok Beach removed in favour of DeleKoomDa &mdash; group already has a full beach day at Hyeopjae on 3 Jun, which is the stronger beach.</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> Show the Korean allergy card at the ranch cafe before ordering any food or drink. At the Grand Hyatt Dream Tower food court and restaurants, show the allergy card and confirm with each outlet before the child eats. At the dinner restaurant, confirm no peanut oil is used in any dish.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Breakfast &mdash; Shilla Stay hotel buffet<span class="area-chip">Jeju City</span></div><div class="card-time">7:30 AM</div></div>
+        <div class="card-desc">Start with the hotel breakfast buffet (weekdays: 6:30&ndash;9:30 AM). A lighter day overall &mdash; take your time over breakfast before the Kook driver arrives. The kids will be energised once they know go-karts and horses are on the agenda.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: Avoid mixed nut trays and unlabelled spreads. Stick to eggs, plain rice, plain bread, and fruit as safe defaults.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kook driver departs &mdash; head east to DeleKoomDa<span class="area-chip">Jeju City &rarr; Pyoseon</span></div><div class="card-time">9:00 AM</div></div>
+        <div class="card-desc">Pickup from Shilla Stay. Ranch Cafe DeleKoomDa is located in Pyoseon-myeon, Seogwipo &mdash; approximately 35 min from Jeju City, in the same east-central area as Seongeup Folk Village (visited on 4 Jun). Open from 9:00 AM; aim to arrive by 9:30&ndash;9:45 AM to get ahead of the mid-morning rush for go-karts and horseback riding.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: 5 June is a Friday &mdash; a weekday visit to DeleKoomDa means lighter queues for activities. Book go-kart and horseback riding slots on arrival at the ticket booth; outdoor activity hours run 09:00&ndash;17:30 with a break 11:50&ndash;13:00.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#D85A30"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Ranch Cafe DeleKoomDa &mdash; activities &amp; cafe<span class="area-chip">Pyoseon, east Jeju</span></div><div class="card-time">9:35 AM</div></div>
+        <div class="card-desc">The hands-down highlight of the day for the kids. DeleKoomDa is a working ranch and activity cafe set against sweeping Jeju grassland scenery. Activities on offer: horseback riding (&#8361;10,000 per person), go-kart racing (&#8361;25,000 single / &#8361;35,000 double), mini electric car rides (&#8361;5,000 per 10 min), and animal feeding &mdash; goats, sheep, and rabbits (&#8361;2,000). The main cafe, cave cafe, and rooftop all offer panoramic views of Jeju's grasslands for grandma to sit and enjoy while the kids cycle through the activities. Free admission &mdash; activities charged separately. Allow 2&ndash;2.5 hours for the full experience.</div>
+        <span class="tag t-kids">Kids</span><span class="tag t-culture">Culture</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Prioritise go-karts and horseback riding early before queues build. Animal feeding is quick and can be done in between other activities. The rooftop cafe is a great spot for grandma to rest with a drink and panoramic grassland views while the kids burn energy. Souvenir photo printing available on site (&#8361;15,000).</div>
+        <div class="allergy-note">Allergy: Show the allergy card at the cafe counter before ordering any food or drink for the child. The cafe menu is primarily beverages and light snacks; plain coffee and tea drinks are lowest risk. Avoid any baked goods, pastries, or snacks with unclear ingredients. The animal feed provided for the goats and rabbits is hay/pellets &mdash; not a food safety risk.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Light lunch &mdash; ranch cafe or nearby restaurant<span class="area-chip">Pyoseon</span></div><div class="card-time">12:00 PM</div></div>
+        <div class="card-desc">The on-site cafe at DeleKoomDa serves light food alongside drinks &mdash; fine for a quick, easy lunch before the return drive. Alternatively, the Kook driver can suggest a local restaurant in the Pyoseon area if the group wants something more substantial. Keep lunch light and efficient to allow comfortable return timing for the Dream Tower afternoon.</div>
+        <span class="tag t-food">Food</span>
+        <div class="allergy-note">Allergy: At the ranch cafe, show the allergy card before ordering any food. At any nearby restaurant, show the card and confirm no peanut oil before the child eats. Korean bibimbap, doenjang jjigae, and simple rice dishes in the area are generally safe &mdash; verify each item.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Return drive to Jeju City &amp; hotel rest<span class="area-chip">Pyoseon &rarr; Jeju City</span></div><div class="card-time">1:00 PM</div></div>
+        <div class="card-desc">The Kook driver returns the group to Jeju City (~35 min). Drop at the Shilla Stay to freshen up &mdash; especially useful after the outdoor ranch activities. Grandma rests at the hotel while others get ready for the afternoon. Depart for the Grand Hyatt Dream Tower around 3:00 PM.</div>
+        <span class="tag t-rest">Rest</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Grand Hyatt Jeju Dream Tower &mdash; HAN Collection &amp; Grand Plaza<span class="area-chip">Jeju City</span></div><div class="card-time">3:00 PM</div></div>
+        <div class="card-desc">The Grand Hyatt Jeju Dream Tower is Jeju's most iconic building &mdash; a 38-storey twin tower in the heart of Jeju City, also the largest Grand Hyatt in Asia Pacific. The HAN Collection K-fashion mall spans two floors with over 300 Korean designer brands &mdash; women's and men's fashion, shoes, handbags, K-beauty, jewellery, and luxury goods including Herm&egrave;s and watches. Outside, the Grand Plaza features stunning 5.5m-tall fountain sculptures inspired by Jeju's volcanic craters, with hourly light and water jet shows. Grandma-friendly &mdash; entirely flat, air-conditioned, and spectacular.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Combine the mall with a visit to the Skyview Lounge 38 on the 38th floor for panoramic views over Jeju City, Hallasan, and the sea &mdash; one of the best viewpoints on the island. The Grand Plaza fountain show runs every hour &mdash; time your exit to catch one.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Chilseong Street &amp; Nuwemaru &mdash; optional city wander<span class="area-chip">Jeju City</span></div><div class="card-time">5:00 PM</div></div>
+        <div class="card-desc">If energy allows, the areas around Chilseong-ro Shopping Street and Nuwemaru Street are a short walk from the Dream Tower &mdash; a mix of local fashion outlets, Korean streetwear brands, convenience stores, and street food. Grandma can rest at a nearby cafe while the older kids browse. Good area to pick up last-minute souvenirs before tomorrow's departure.</div>
+        <span class="tag t-shop">Shopping</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Chilseong-ro has an underground mall as well &mdash; cool and shaded, good for a hot afternoon browse. The area is pedestrian-friendly and compact.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Dinner &mdash; Korean food, Jeju City<span class="area-chip">Jeju City</span></div><div class="card-time">7:00 PM</div></div>
+        <div class="card-desc">Final full dinner in Jeju City &mdash; and the last proper Korean meal before tomorrow's early departure. Jeju jeongsik (traditional Korean set meal with multiple banchan courses) is a fitting choice; alternatively, haenyeo-caught seafood stew around the Dongmun area is a Jeju classic. The group has earned a relaxed, celebratory meal to close out the Jeju days.</div>
+        <span class="tag t-food">Food</span><span class="tag t-kids">Kids</span>
+        <div class="tip">Tip: Nuwemaru Street and the surrounding Shin Jeju area has a dense cluster of well-reviewed restaurants &mdash; browse before committing. Look for a restaurant that can seat your full group comfortably.</div>
+        <div class="allergy-note">Allergy: Show the Korean allergy card before ordering. Traditional Korean jeongsik uses sesame oil and soy-based sauces &mdash; generally safe, but confirm each banchan dish individually. Seafood stew and grilled fish are the lowest-risk mains. Verify before the child eats anything new.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Convenience store run &mdash; breakfast for tomorrow<span class="area-chip">Jeju City</span></div><div class="card-time">~9:00 PM</div></div>
+        <div class="card-desc">On the way back to the hotel, both families stop at a CU or GS25 near the Shilla Stay to buy breakfast for the next morning. Kendrick's family (departing 6:30 AM) needs food before the hotel buffet opens; Kelvin's family (departing ~8:45 AM) also departs before a proper buffet breakfast is practical. Stock up on kimbap, onigiri, triangle rice balls, banana milk, juices, and individual pastries &mdash; enough for both families to eat in the room or lobby before leaving.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: CU and GS25 both have branches close to the Shilla Stay. Korean convenience store kimbap and onigiri are freshly stocked and make a decent morning meal. Refrigerate overnight and eat before check-out.</div>
+        <div class="allergy-note">Allergy: Check every item's ingredient label carefully in the store before purchasing for the child. Avoid products with peanut or tree nut ingredients, mixed fillings, or unclear labelling. Plain tuna, salmon, or pickled plum onigiri and plain kimbap rolls are the safest choices. Banana milk and plain juice cartons are peanut-free.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PANEL 7: 6 JUN ==================== -->
+  <div class="day-panel" id="panel-7">
+    <div class="day-header">6 June 2026 &mdash; departure day, Jeju to Singapore</div>
+    <div class="day-sub-line">Kendrick: convenience store breakfast &middot; early check-out &middot; OZ8914 &middot; GMP &rarr; ICN direct &middot; lunch &amp; lounge &middot; Kelvin + Grandma: convenience store breakfast &middot; TW710 &middot; GMP &rarr; ICN &middot; Both families: meet at gate &middot; SQ601 &rarr; Singapore</div>
+    <div class="legend"><span class="tag t-food">Food</span><span class="tag t-kids">Kids</span><span class="tag t-rest">Rest</span><span class="tag t-allergy">Allergy</span></div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance &mdash; Kendrick's family:</strong> Convenience store breakfast + check-out 6:00 AM &middot; Klook van to CJU 6:30 AM &middot; OZ8914 departs CJU 8:45 AM &middot; Arrives GMP 10:00 AM &middot; Klook van GMP &rarr; ICN direct ~10:30 AM &middot; Arrive ICN ~11:15&ndash;11:30 AM &middot; Final Korean meal pre-security &middot; SQ601 check-in 1:00 PM &middot; Priority Pass lounge airside &middot; Meet Kelvin's family at gate ~2:45 PM &middot; SQ601 departs 3:30 PM</div>
+    <div class="note">&#8505;&#65039; <strong>Day at a glance &mdash; Kelvin's family (incl. Grandma):</strong> Convenience store breakfast + check-out ~8:30 AM &middot; Own transfer to CJU ~8:45 AM &middot; TW710 departs CJU 11:05 AM &middot; Arrives GMP 12:20 PM &middot; Own transfer GMP &rarr; ICN &middot; Arrive ICN ~1:20&ndash;1:30 PM &middot; SQ601 check-in immediately on arrival &middot; Clear security &middot; Meet Kendrick's family at gate ~2:45 PM &middot; SQ601 departs 3:30 PM</div>
+    <div class="note allergy">&#9888;&#65039; <strong>Peanut allergy:</strong> At CJU airport cafes and convenience stores, check labels before purchasing anything for the child. On OZ8914 and TW710, notify crew on boarding for each respective flight. At ICN, show the allergy card at the terminal restaurant before ordering. In the Priority Pass lounge, keep the child away from shared nut bowls and confirm any food with lounge staff. On SQ601, inform cabin crew of the allergy immediately on boarding.</div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; convenience store breakfast &amp; check-out<span class="area-chip">Jeju City</span></div><div class="card-time">6:00 AM</div></div>
+        <div class="card-desc">Kendrick's family eats the breakfast bought from the convenience store the previous evening &mdash; kimbap, onigiri, banana milk, and pastries in the room or lobby before checking out. The hotel breakfast buffet opens at 7:00 AM on Saturdays &mdash; too late for the 6:30 AM van departure. Aim to be fully checked out by 6:30 AM. Settle all outstanding charges the night before. Kelvin's family (including Grandma) can take their time with their own convenience store breakfast before their later departure.</div>
+        <span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Pre-pack bags the evening before. Say goodbye to Kelvin's family and Grandma during the convenience store run or over dinner &mdash; the 6:00 AM start leaves no time for a proper farewell in the morning.</div>
+        <div class="allergy-note">Allergy: Labels were already checked at the convenience store the night before &mdash; confirm once more before giving any item to the child in the morning. Stick to the items confirmed safe the previous evening.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; Klook minivan to CJU<span class="area-chip">Jeju City &rarr; CJU</span></div><div class="card-time">6:30 AM</div></div>
+        <div class="card-desc">Kendrick's family departs in the pre-booked Klook minivan. CJU is approximately 10 minutes from the hotel. Arrive at CJU by 6:45 AM for the 8:45 AM OZ8914 departure. Domestic check-in desks typically open 2 hours before departure; aim to be through security by 7:30 AM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm the Klook pickup point and driver contact the evening before. CJU is compact &mdash; no immigration for domestic departures, just check-in and security.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; OZ8914 departs CJU<span class="area-chip">CJU &rarr; GMP</span></div><div class="card-time">8:45 AM</div></div>
+        <div class="card-desc">Asiana Airlines OZ8914 departs Jeju at 8:45 AM and arrives at Seoul Gimpo (GMP) at 10:00 AM &mdash; a 75-minute domestic hop. GMP's domestic arrivals hall is compact and fast. Target baggage collection and exit by 10:20&ndash;10:30 AM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="allergy-note">Allergy: Notify the flight attendant of the severe peanut allergy on boarding. Bring safe snacks from CJU &mdash; skip any airline snack items unless confirmed peanut-free.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; Klook minivan GMP direct to ICN T1<span class="area-chip">GMP &rarr; ICN</span></div><div class="card-time">~10:30 AM</div></div>
+        <div class="card-desc">Pre-booked Klook minivan meets Kendrick's family at GMP domestic arrivals and proceeds directly to ICN Terminal 1 &mdash; approximately 35&ndash;45 min in normal traffic. No stop en route. Expect to arrive at ICN by 11:15&ndash;11:30 AM, giving a comfortable 2+ hours before check-in and plenty of time for a meal and the lounge.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Confirm with the Klook driver that the destination is ICN Terminal 1 (SQ operates from T1). Have the driver's contact number ready at GMP arrivals. 6 June is a Saturday &mdash; allow a small traffic buffer.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; final Korean meal pre-security<span class="area-chip">ICN Terminal 1</span></div><div class="card-time">~11:30 AM</div></div>
+        <div class="card-desc">ICN Terminal 1 has excellent Korean restaurants on Levels 3 and 4 before security. Kendrick's family has a relaxed, unhurried final Korean meal &mdash; kalguksu, bibimbap, doenjang jjigae, and Korean BBQ all available at sit-down restaurants. Myung-ga on Level 3 is a well-regarded option. Plenty of time before the 1:00 PM check-in target.</div>
+        <span class="tag t-food">Food</span>
+        <div class="tip">Tip: Eat before check-in so the group is comfortable and relaxed through the queue. There is no rush &mdash; arriving at 11:30 AM with a 3:30 PM flight is a generous window.</div>
+        <div class="allergy-note">Allergy: Show the Korean allergy card before ordering at any ICN restaurant. Korean noodle and jjigae restaurants at the terminal generally use sesame oil &mdash; confirm no peanut oil before the child eats. Avoid pre-packaged snack purchases at terminal shops unless ingredients are clearly labelled.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; SQ601 check-in &amp; immigration<span class="area-chip">ICN Terminal 1</span></div><div class="card-time">1:00 PM</div></div>
+        <div class="card-desc">Head to the SQ check-in counters by 1:00 PM. SQ recommends at least 2&ndash;2.5 hours before departure. After check-in, clear immigration and security &mdash; typically fast at ICN. Airside by approximately 1:45&ndash;2:00 PM, leaving 90 minutes before boarding for the lounge and duty-free. Kelvin's family will be making their way from GMP at this point &mdash; plan to meet at the SQ601 gate by 2:45 PM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Use SQ online check-in beforehand to save time at the counter. Have passports and booking references readily accessible &mdash; processing a large group can take time.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#534AB7"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kendrick's family &mdash; Priority Pass lounge &amp; airside duty-free<span class="area-chip">ICN Terminal 1 airside</span></div><div class="card-time">~2:00 PM</div></div>
+        <div class="card-desc">ICN Terminal 1 has several Priority Pass-eligible lounges airside. Lounges offer comfortable seating, light refreshments, and a calm environment away from the busy departure hall &mdash; a good way for the kids to decompress before the 6.5-hour flight. Supplement with a browse of the airside duty-free for last-minute K-beauty, Korean snacks, and gifts. Keep an eye on the time &mdash; leave the lounge by 2:40 PM to reach the gate and reconnect with Kelvin's family before boarding begins at 2:45 PM.</div>
+        <span class="tag t-rest">Rest</span><span class="tag t-shop">Shopping</span>
+        <div class="tip">Tip: Check which Priority Pass lounges are accessible at ICN T1 on the Priority Pass app before departure &mdash; options and guest policies can vary. Many lounges allow a limited number of complimentary guests; confirm guest fees in advance for a group this size. The lounge is the most comfortable place to spend the final hour before boarding.</div>
+        <div class="allergy-note">Allergy: In the Priority Pass lounge, inform lounge staff of the severe peanut allergy before letting the child eat any of the communal food. Mixed nut bowls are common in airport lounges &mdash; keep the child away from the shared snack stations. Stick to sealed, individually packaged items with clear ingredient labels, or pre-packed fruit.</div>
+      </div>
+    </div>
+
+    <!-- KELVIN'S FAMILY -->
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#EF9F27"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family (incl. Grandma) &mdash; convenience store breakfast &amp; check-out<span class="area-chip">Jeju City</span></div><div class="card-time">~7:30 AM</div></div>
+        <div class="card-desc">Kelvin's family eats the breakfast bought from the convenience store the previous evening &mdash; kimbap, onigiri, banana milk, and pastries in the room or lobby before checking out. A relaxed, unhurried morning for Grandma before the 11:05 AM TW710. Aim to check out and depart for CJU around 8:30&ndash;8:45 AM, giving around 2 hours at the airport before departure.</div>
+        <span class="tag t-food">Food</span><span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Settle all outstanding charges the night before. Confirm the taxi or Klook pickup for ~8:30 AM the evening before.</div>
+        <div class="allergy-note">Allergy: Labels were already checked at the convenience store the night before &mdash; confirm once more before giving any item to the child in the morning. Stick to the items confirmed safe the previous evening.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; own transfer to CJU<span class="area-chip">Jeju City &rarr; CJU</span></div><div class="card-time">~8:45 AM</div></div>
+        <div class="card-desc">Kelvin's family arranges their own transfer from the Shilla Stay to CJU &mdash; a Kakao Taxi or separately booked Klook van. CJU is approximately 10 minutes from the hotel. Aim to arrive at CJU by 9:00&ndash;9:15 AM for the 11:05 AM TW710, giving around 2 hours for check-in and a comfortable wait.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Book the taxi or van the evening before to guarantee availability. Ensure Grandma boards comfortably and confirm luggage space in advance.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; TW710 departs CJU<span class="area-chip">CJU &rarr; GMP</span></div><div class="card-time">11:05 AM</div></div>
+        <div class="card-desc">T'way Air TW710 departs Jeju at 11:05 AM and arrives at Seoul Gimpo (GMP) at 12:20 PM &mdash; a 75-minute domestic hop. Target baggage collection and exit by 12:40&ndash;12:45 PM. From GMP, Kelvin's family proceeds directly to ICN.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Check in at the T'way Air counter at CJU. No immigration on domestic departure &mdash; just check-in and security.</div>
+        <div class="allergy-note">Allergy: Notify the T'way flight attendant of the severe peanut allergy on boarding. Bring safe snacks &mdash; skip any airline snack items unless confirmed peanut-free.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#0F6E56"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; own transfer GMP to ICN T1<span class="area-chip">GMP &rarr; ICN</span></div><div class="card-time">~12:45 PM</div></div>
+        <div class="card-desc">Kelvin's family arranges their own transfer from GMP to ICN Terminal 1 &mdash; a Kakao Taxi or pre-booked van, approximately 35&ndash;45 min. Expect to arrive at ICN around 1:20&ndash;1:30 PM. Proceed directly to SQ601 check-in on arrival &mdash; no time for a sit-down meal. Consider grabbing a light snack at CJU or GMP before the flight given the limited time at ICN.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Book the GMP &rarr; ICN taxi or van in advance, timed for a ~12:45 PM GMP pickup. Use SQ online check-in beforehand to save time at the ICN counter.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Kelvin's family &mdash; SQ601 check-in, immigration &amp; gate<span class="area-chip">ICN Terminal 1</span></div><div class="card-time">~1:30 PM</div></div>
+        <div class="card-desc">Kelvin's family arrives ICN around 1:20&ndash;1:30 PM and proceeds directly to the SQ601 check-in counters. SQ's technical check-in cut-off is 60 minutes before departure (2:30 PM) &mdash; this is workable but with minimal buffer, so no time for browsing or a meal. After check-in, clear immigration and security and proceed straight to the departure gate. Meet Kendrick's family at the SQ601 gate by 2:45 PM.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Use SQ online check-in in advance and have all passports and documents ready at the counter. The gate area has seating &mdash; Grandma can rest comfortably once airside while waiting for boarding.</div>
+      </div>
+    </div>
+
+    <!-- BOTH FAMILIES REUNITED -->
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Both families reunite &mdash; SQ601 departure gate<span class="area-chip">ICN Terminal 1 airside</span></div><div class="card-time">~2:45 PM</div></div>
+        <div class="card-desc">Both families meet at the SQ601 departure gate by 2:45 PM. Boarding begins approximately 40&ndash;45 minutes before the 3:30 PM departure. The full group is together again for the flight home.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Share the gate number on the group chat once Kendrick's family clears security. Gates at ICN Terminal 1 are clearly signposted from the security exit.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#185FA5"></div><div class="line"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">SQ601 &mdash; Seoul to Singapore<span class="area-chip">ICN &rarr; SIN</span></div><div class="card-time">3:30 PM KST</div></div>
+        <div class="card-desc">Singapore Airlines SQ601 departs Incheon at 3:30 PM KST and arrives at Singapore Changi Airport at 10:00 PM SGT. Flight time approximately 6 hours 30 minutes. Both families on board together. Kids and Grandma will be tired &mdash; a good flight to sleep on. End of a great trip.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: SGT is 1 hour behind KST. Try to seat both families in the same section of the cabin when booking &mdash; easier to manage the kids together on a long flight.</div>
+        <div class="allergy-note">Allergy: Inform SQ cabin crew of the severe peanut allergy immediately on boarding SQ601. Request no peanut snacks near your seats. SQ is allergen-aware but always confirm with crew directly.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="timeline"><div class="dot" style="background:#5F5E5A"></div></div>
+      <div class="card">
+        <div class="card-row"><div class="card-title">Arrive Singapore &mdash; Changi Airport<span class="area-chip">SIN Terminal 3</span></div><div class="card-time">10:00 PM SGT</div></div>
+        <div class="card-desc">SQ601 arrives Changi Terminal 3 at 10:00 PM. Both families clear immigration together, collect bags, and arrange taxis or Grab rides home. No meaningful time zone adjustment &mdash; KST is only 1 hour ahead of SGT. Welcome home.</div>
+        <span class="tag t-rest">Rest</span>
+        <div class="tip">Tip: Two Grab or Comfort taxis from Changi to Bedok at 10 PM should be readily available without pre-booking. Immigration at T3 is typically fast at this hour.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-note">Seoul &amp; Jeju Family Itinerary &middot; SQ600 / SQ601 &middot; OZ8941 / OZ8914 &middot; TW709 / TW710 &middot; Sotetsu Hotels The Splaisir &middot; Shilla Stay Jeju &middot; Generated with Claude &middot; Verify hours and locations before travel</div>
+</div>
+
+<script>
+function showDay(i) {
+  document.querySelectorAll('.day-tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.day-panel').forEach((p,j) => p.classList.toggle('active', i===j));
+}
+</script>
+</body>
+</html>
